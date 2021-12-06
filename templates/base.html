@@ -31,7 +31,7 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo02">
         <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,15 +45,19 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="{{ url_for('login') }}">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Register</a>
+            <a class="nav-link" href="{{ url_for('register') }}">Register</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  
+  {% block content %}
+  {% endblock %}
+
   <!-- Footer -->
   <footer class="text-center text-lg-start bg-light text-muted fixed-bottom">
     <!-- Section: Social media -->
