@@ -1,0 +1,85 @@
+<form>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="email" id="form1Example1" class="form-control" />
+      <label class="form-label" for="form1Example1">Email address</label>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password" id="form1Example2" class="form-control" />
+      <label class="form-label" for="form1Example2">Password</label>
+    </div>
+
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+        <!-- Checkbox -->
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="form1Example3"
+            checked
+          />
+          <label class="form-check-label" for="form1Example3"> Remember me </label>
+        </div>
+      </div>
+
+      <div class="col">
+        <!-- Simple link -->
+        <a href="#!">Forgot password?</a>
+      </div>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block">Log in</button>
+  </form>
+
+
+  <form>
+    <!-- Name input -->
+    <div class="form-outline mb-4">
+        <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+        <label class="form-label" for="form3Example1cg">Your Name</label>
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+        <label class="form-label" for="form3Example3cg">Your Email</label>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+        <label class="form-label" for="form3Example4cg">Password</label>
+    </div>
+
+    <!-- Repeat Password input -->
+    <div class="form-outline mb-4">
+        <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+        <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+    </div>
+
+    <!-- Checkbox -->
+    <div class="form-check d-flex justify-content-center mb-5">
+        <input
+        class="form-check-input me-2"
+        type="checkbox"
+        value=""
+        id="form2Example3cg"
+        />
+        <label class="form-check-label" for="form2Example3g">
+        I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+        </label>
+    </div>
+
+    <!-- Register button -->
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+    </div>
+    <!-- Simple link -->
+    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="{{ url_for('login') }}" class="fw-bold text-body"><u>Login here</u></a></p>
+</form>
