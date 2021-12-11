@@ -25,6 +25,11 @@ def register():
     return render_template("register.html")
 
 
+@app.route("/post_delete")
+def post_delete():
+    return render_template("post_delete.html")
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),

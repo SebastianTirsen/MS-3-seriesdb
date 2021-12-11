@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-lg-8 col-md-10 mx-auto">
+  <h1>Post a new show and give your rating!</h1>
+</div>
+
+<form>
+    <!-- column grid layout with dropdowns and text inputs -->
+    <div class="row mb-4">
+
+      <div class="col mb-4">
+        <div class="form-outline">
+          <label class="Visually-hidden" for="inlineFormSelectPref"></label>
+        <select class="select form-control">
+          <option value="" disabled selected>🔽  Genre</option>
+          <option value="1">Action</option>
+          <option value="2">Comedy</option>
+          <option value="3">Drama</option>
+          <option value="4">Fantasy</option>
+          <option value="5">Horror</option>
+          <option value="6">Mystery</option>
+          <option value="7">Romance</option>
+          <option value="8">Thriller</option>
+          <option value="8">Western</option>
+        </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <label class="Visually-hidden" for="inlineFormSelectPref"></label>
+        <select class="select form-control">
+          <option value="" disabled selected>🔽  Country</option>
+          <option value="1">India</option>
+          <option value="2">US</option>
+          <option value="3">China</option>
+          <option value="4">Japan</option>
+          <option value="5">France</option>
+          <option value="6">Spain</option>
+          <option value="7">South Korea</option>
+          <option value="8">Italy</option>
+          <option value="8">Germany</option>
+          <option value="8">UK</option>
+          <option value="8">Russian Fed</option>
+          <option value="8">Argentina</option>
+          <option value="8">Indonesia</option>
+          <option value="8">Brazil</option>
+          <option value="8">Philippines</option>
+          <option value="8">Mexico</option>
+          <option value="8">Turkey</option>
+          <option value="8">Hong Kong</option>
+          <option value="8">Netherlands</option>
+          <option value="8">Austria</option>
+          <option value="8">Sweden</option>
+          <option value="8">Poland</option>
+          <option value="8">Taiwan</option>
+          <option value="8">Malaysia</option>
+          <option value="8">Finland</option>
+          <option value="8">Czech Republ</option>
+          <option value="8">Australia</option>
+          <option value="8">Belgium</option>
+          <option value="8">Denmark</option>
+        </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <label class="Visually-hidden" for="inlineFormSelectPref"></label>
+        <select class="select form-control">
+          <option value="" disabled selected>🔽  Year</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+          <option value="4">Four</option>
+          <option value="5">Five</option>
+          <option value="6">Six</option>
+          <option value="7">Seven</option>
+          <option value="8">Eight</option>
+        </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <label class="Visually-hidden" for="inlineFormSelectPref"></label>
+        <select class="select form-control">
+          <option value="" disabled selected>🔽  Seasons</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+          <option value="4">Four</option>
+          <option value="5">Five</option>
+          <option value="6">Six</option>
+          <option value="7">Seven</option>
+          <option value="8">Eight</option>
+        </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <label class="Visually-hidden" for="inlineFormSelectPref"></label>
+        <select class="select form-control">
+          <option value="" disabled selected>🔽  Your Rating</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="8">9</option>
+          <option value="8">10</option>
+        </select>
+        </div>
+      </div>
+  
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form6Example3">Title of Show</label>
+      <input type="text" id="form6Example3" class="form-control" /> 
+    </div>
+  
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form6Example4">Director</label>
+      <input type="text" id="form6Example4" class="form-control" />
+    </div>
+
+      <!-- Text input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Starring</label>
+        <input type="text" id="form6Example4" class="form-control" />
+      </div>
+
+      <!-- Text input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Picture Link</label>
+        <input type="text" id="form6Example4" class="form-control" />
+      </div>
+  
+    <!-- Message input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form6Example7">Synopsis:</label>
+      <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+    </div>
+
+    <!-- Message input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form6Example7">Your comments:</label>
+      <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+    </div>
+  
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Post your Rating!</button>
+  </form>
+</div>
+{% endblock %}
