@@ -30,6 +30,11 @@ def post_delete():
     return render_template("post_delete.html")
 
 
+@app.route("/cards")
+def cards():
+    return render_template("cards.html")
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
