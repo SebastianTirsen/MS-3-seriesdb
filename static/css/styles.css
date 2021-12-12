@@ -18,6 +18,32 @@
     text-align: center;
     }
 
+    .card-desc {
+      display: block;
+      font-size: 1.2rem;
+      position: absolute;
+      height: 0;
+      top: 0;
+      opacity: 0;
+      padding: 18px 8%;
+      background-color: white;
+      overflow-y: scroll;
+      transition: 0.8s ease;
+    }
+    
+    .card:hover .card-desc {
+      opacity: 1;
+      height: 100%;
+    }
+
+    #block_container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .sort-btn {
+      height: 100px;
+    }
     
 
 
