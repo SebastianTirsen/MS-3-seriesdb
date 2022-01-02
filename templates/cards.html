@@ -2,73 +2,258 @@
 {% block content %}
 <div id="block_container">
   <div>
-  <div class="card mb-3" style="max-width: 90%;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="{{ url_for('static', filename='img/sexcity.jpeg') }}" class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          <a href="{{ url_for('show') }}" class="btn btn-primary">Go to Show</a>
-          <!-- <p class="card-text card-desc">Here you can put all the comments from the raters and haters...</p> -->
+    <div class="show_container">
+      <figure class="movie">
+        <div class="movie__hero">
+          <h1 class="heading__primary">Game of Thrones</h1>
+          <div class="rating">
+            <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i>
+            </span>4.5</p>
+          </div>
+          <img src="{{ url_for('static', filename='img/Game-of-Thrones-Ending.jpeg') }}" alt="Game of Thrones" class="movie__img">
+
+        <div class="movie-data">
+          <p class="movie__detail"><i class="fas fa-film"></i>&nbsp;2011</p>
+          <div class="movie__tag movie__tag--1">Adventure</div>
+          <div class="movie__tag movie__tag--2">Action</div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mb-3" style="max-width: 90%;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="{{ url_for('static', filename='img/Game-of-Thrones-Ending.jpeg') }}" class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          <a href="{{ url_for('show') }}" class="btn btn-primary">Go to Show</a>
+          <div class="movie__details">
+            <p class="movie__detail"><span></span><i class="fas fa-globe"></i></span>&nbsp;USA</p>
+            <p class="movie__detail"><span><i class="fas fa-child"></i></span>&nbsp;+13 years</p>
+            <p class="movie__detail"><span class="icons icons-grey"><i class="fas fa-hourglass-half"></i></span>&nbsp;8 seasons</p>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mb-3" style="max-width: 90%;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="{{ url_for('static', filename='img/dexter.jpeg') }}" class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          <a href="{{ url_for('show') }}" class="btn btn-primary">Go to Show</a>
+        <div class="movie__content"> 
+          <p><strong>Writer:</strong> David Benioff</p>
+          <p><strong>Starring:</strong> Emilia Clarke &nbsp;Peter Dinklage &nbsp;Kit Harington</p>
+          <h5><i>Story:</i></h5>
+          <p class="movie__description">
+            In the mythical continent of Westeros, several powerful families fight for control of the Seven Kingdoms. As conflict erupts in the kingdoms of men, an ancient enemy rises once again to threaten them all. Meanwhile, the last heirs of a recently usurped dynasty plot to take back their homeland from across the Narrow Sea.
+          </p>
+          <hr>
+          <div class="card-buttons">
+          <div class="dropup">
+            <button class="btn btn-lg btn-primary dropdown-toggle" type="button" id="dropdownmenu" data-bs-toggle="dropdown" aria-expanded="false">
+              Reviews
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownmenu">
+              <div class="reviews">
+                <h5>User Reviews</h5>
+                <div class="review">
+                  <p class="user">David</p>
+                  <p>I think this show was totally awesome. I gave it five stars and will watch it all over again soon. My best recommendations!</p>
+                </div>
+                <div class="review">
+                  <p class="user">Loreen</p>
+                  <p>A clearly overrated show. Too much blood and violence. I gave it three stars beacuse of the great actors. Ok to watch.</p>
+                </div>
+                <div class="review">
+                  <p class="user">Gabriel</p>
+                  <p>I really like Spiderman, No Way Home. That was a great movie!</p>
+                </div>
+                <div class="review">
+                  <p class="user">Lukas</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur perspiciatis molestiae laboriosam inventore corrupti quas expedita labore, tempora amet animi aliquid consectetur quasi perferendis quia ipsa repellendus dicta nemo.</p>
+                </div>
+                <div class="review">
+                  <p class="user">Magnus</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur perspiciatis molestiae laboriosam inventore corrupti quas expedita labore, tempora amet animi aliquid consectetur quasi perferendis quia ipsa repellendus dicta nemo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-lg btn-primary" type="button" id="">
+            Edit
+          </button>
+          <button class="btn btn-lg btn-primary" type="button" id="">
+            Delete
+          </button>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mb-3" style="max-width: 90%;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="{{ url_for('static', filename='img/Bandof.jpeg') }}" class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          <a href="{{ url_for('show') }}" class="btn btn-primary">Go to Show</a>
         </div>
-      </div>
+        <div class="movie__price">#1</div>
+      </figure>
     </div>
+    
+    <div class="show_container">
+      <figure class="movie">
+        <div class="movie__hero">
+          <h1 class="heading__primary">"Dexter"</h1>
+          <div class="rating">
+            <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </span>4.0</p>
+          </div>
+          <img src="{{ url_for('static', filename='img/dexter.jpeg') }}" alt="Dexter" class="movie__img">
+
+        <div class="movie-data">
+          <p class="movie__detail"><i class="fas fa-film"></i>&nbsp;2011</p>
+          <div class="movie__tag movie__tag--1">Thriller</div>
+        </div>
+          <div class="movie__details">
+            <p class="movie__detail"><span></span><i class="fas fa-globe"></i></span>&nbsp;USA</p>
+            <p class="movie__detail"><span><i class="fas fa-child"></i></span>&nbsp;+17 years</p>
+            <p class="movie__detail"><span class="icons icons-grey"><i class="fas fa-hourglass-half"></i></span>&nbsp;8 seasons</p>
+          </div>
+        </div>
+        <div class="movie__content"> 
+          <p><strong>Writer:</strong> James Manos Jr</p>
+          <p><strong>Starring:</strong> Michael C. Hall &nbsp;Jennifer Carpenter &nbsp;David Zayas</p>
+          <h5><i>Story:</i></h5>
+          <p class="movie__description">
+            He's smart, he's good looking, and he's got a great sense of humor. He's Dexter Morgan, everyone's favorite serial killer. As a Miami forensics expert, he spends his days solving crimes, and nights committing them. But Dexter lives by a strict code of honor that is both his saving grace and lifelong burden. Torn between his deadly compulsion and his desire for true happiness, Dexter is a man in profound conflict with the world and himself. 
+          </p>
+          <hr>
+          <div class="card-buttons">
+          <div class="dropup">
+            <button class="btn btn-lg btn-primary dropdown-toggle" type="button" id="dropdownmenu" data-bs-toggle="dropdown" aria-expanded="false">
+              Reviews
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownmenu">
+              <div class="reviews">
+                <h5>User Reviews</h5>
+                <div class="review">
+                  <p class="user">David</p>
+                  <p>I think this show was totally awesome. I gave it five stars and will watch it all over again soon. My best recommendations!</p>
+                </div>
+                <div class="review">
+                  <p class="user">Loreen</p>
+                  <p>A clearly overrated show. Too much blood and violence. I gave it three stars beacuse of the great actors. Ok to watch.</p>
+                </div>
+                <div class="review">
+                  <p class="user">Gabriel</p>
+                  <p>I really like Spiderman, No Way Home. That was a great movie!</p>
+                </div>
+                <div class="review">
+                  <p class="user">Lukas</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur perspiciatis molestiae laboriosam inventore corrupti quas expedita labore, tempora amet animi aliquid consectetur quasi perferendis quia ipsa repellendus dicta nemo.</p>
+                </div>
+                <div class="review">
+                  <p class="user">Magnus</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur perspiciatis molestiae laboriosam inventore corrupti quas expedita labore, tempora amet animi aliquid consectetur quasi perferendis quia ipsa repellendus dicta nemo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-lg btn-primary" type="button" id="">
+            Edit
+          </button>
+          <button class="btn btn-lg btn-primary" type="button" id="">
+            Delete
+          </button>
+        </div>
+        </div>
+        <div class="movie__price">#2</div>
+      </figure>
+    </div>
+    
+    <div class="show_container">
+      <figure class="movie">
+        <div class="movie__hero">
+          <h1 class="heading__primary">Sex And the City</h1>
+          <div class="rating">
+            <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i>
+            </span>4.0</p>
+          </div>
+          <img src="{{ url_for('static', filename='img/sexcity.jpeg') }}" alt="Sexandthecity" class="movie__img">
+
+        <div class="movie-data">
+          <p class="movie__detail"><i class="fas fa-film"></i>&nbsp;2008</p>
+          <div class="movie__tag movie__tag--1">Romance</div>
+        </div>
+          <div class="movie__details">
+            <p class="movie__detail"><span></span><i class="fas fa-globe"></i></span>&nbsp;USA</p>
+            <p class="movie__detail"><span><i class="fas fa-child"></i></span>&nbsp;+13 years</p>
+            <p class="movie__detail"><span class="icons icons-grey"><i class="fas fa-hourglass-half"></i></span>&nbsp;6 seasons</p>
+          </div>
+        </div>
+        <div class="movie__content"> 
+          <p><strong>Writer:</strong> Michael Patrick King &nbsp;Candace Bushnell
+          </p>
+          <p><strong>Starring:</strong> Sarah Jessica Parker &nbsp;JKim Cattrall &nbsp;Cynthia Nixon</p>
+          <h5><i>Story:</i></h5>
+          <p class="movie__description">
+            Journalist and sex blogger Carrie Bradshow writes about sex life in New York and together with her three friends Samantha, Charlotte and Miranda, she explores Manhattan's dating scene. She writes about single life in New York and people's different sex habits. Not entirely unexpectedly, the four friends meet a number of men during the series. 
+          </p>
+          <hr>
+          <div class="card-buttons">
+          <div class="dropup">
+            <button class="btn btn-lg btn-primary dropdown-toggle" type="button" id="dropdownmenu" data-bs-toggle="dropdown" aria-expanded="false">
+              Reviews
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownmenu">
+              <div class="reviews">
+                <h5>User Reviews</h5>
+                <div class="review">
+                  <p class="user">David</p>
+                  <p>I think this show was totally awesome. I gave it five stars and will watch it all over again soon. My best recommendations!</p>
+                </div>
+                <div class="review">
+                  <p class="user">Loreen</p>
+                  <p>A clearly overrated show. Too much blood and violence. I gave it three stars beacuse of the great actors. Ok to watch.</p>
+                </div>
+                <div class="review">
+                  <p class="user">Gabriel</p>
+                  <p>I really like Spiderman, No Way Home. That was a great movie!</p>
+                </div>
+                <div class="review">
+                  <p class="user">Lukas</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur perspiciatis molestiae laboriosam inventore corrupti quas expedita labore, tempora amet animi aliquid consectetur quasi perferendis quia ipsa repellendus dicta nemo.</p>
+                </div>
+                <div class="review">
+                  <p class="user">Magnus</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur perspiciatis molestiae laboriosam inventore corrupti quas expedita labore, tempora amet animi aliquid consectetur quasi perferendis quia ipsa repellendus dicta nemo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-lg btn-primary" type="button" id="">
+            Edit
+          </button>
+          <button class="btn btn-lg btn-primary" type="button" id="">
+            Delete
+          </button>
+        </div>
+        </div>
+        <div class="movie__price">#3</div>
+      </figure>
+    </div>
+  
+
+        <!-- <div class="card mb-3" style="max-width: 90%;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{{ url_for('static', filename='img/dexter.jpeg') }}" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      <a href="{{ url_for('show') }}" class="btn btn-primary">Go to Show</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3" style="max-width: 90%;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{{ url_for('static', filename='img/Bandof.jpeg') }}" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      <a href="{{ url_for('show') }}" class="btn btn-primary">Go to Show</a>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
   </div>
-</div>
   <div class="d-grid gap-2 col-3 mx-auto">
-    <button class="btn btn-primary sort-btn" type="button">Filter <i class="fas fa-filter"></i></button>
-    <button class="btn btn-primary sort-btn" type="button">Sort by Rank <i class="fas fa-medal"></i></button>
-    <button class="btn btn-primary sort-btn" type="button">Sort by Rating <i class="far fa-star"></i></button>
-    <button class="btn btn-primary sort-btn" type="button">Sort A-Z <i class="fas fa-arrows-alt-v"></i></button>
+    <button class="btn btn-lg btn-primary sort-btn" type="button">Filter <i class="fas fa-filter"></i></button>
+    <button class="btn btn-lg btn-primary sort-btn" type="button">Sort by Rank <i class="fas fa-medal"></i></button>
+    <button class="btn btn-lg btn-primary sort-btn" type="button">Sort by Rating <i class="far fa-star"></i></button>
+    <button class="btn btn-lg btn-primary sort-btn" type="button">Sort A-Z <i class="fas fa-arrows-alt-v"></i></button>
   </div>
 </div>
 
