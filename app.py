@@ -1,20 +1,21 @@
 import os
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, url_for, flash
 import pymongo
+if os.path.exists("env.py"):
+    import env
 
 
 app = Flask(__name__)
 
 
-MONGO_URI = "mongodb+srv://Sebastian:Gabbeluba@ms3cluster.qruwl.mongodb.net/ms3_seriesdb?retryWrites=true&w=majority"
+MONGO_URI = os.environ.get("MONGO_URI")
 DATABASE = "ms3_seriesdb"
-COLLECTION = "contact"
+COLLECTION = "series"
 
 
 def mongo_connect(url):
     try:
         conn = pymongo.MongoClient(url)
-        print("Mongo is connected")
         return conn
     except pymongo.errors.ConnectionFailure as e:
         print("Could not connect to MongoDB: %s") % e
@@ -23,11 +24,6 @@ def mongo_connect(url):
 conn = mongo_connect(MONGO_URI)
 
 coll = conn[DATABASE][COLLECTION]
-
-documents = coll.find()
-
-for doc in documents:
-    print(doc)
 
 
 @app.route("/")
@@ -60,7 +56,7 @@ def cards():
     return render_template("cards.html")
 
 
-@app.route("/contact")
+@app.route("/contact", methods=["GET", "POST"])
 def contact():
     return render_template("contact.html")
 
