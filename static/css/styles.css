@@ -1,5 +1,10 @@
+#logo {
+    font-size: 1.75rem;
+}
+
+
 .cta-button { 
-    height: 200px;
+    height: 250px;
     position: relative;
   }
   
@@ -31,10 +36,10 @@
       transition: 0.8s ease;
     }
     
-    .card:hover .card-desc {
+/*     .card:hover .card-desc {
       opacity: 1;
       height: 100%;
-    }
+    } */
 
     #block_container {
       display: flex;
@@ -140,6 +145,10 @@ body {
 /*     display: flex;
     align-items: center;
     justify-content: center; */
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    width: 80%;
 }
 
 .show_container {
