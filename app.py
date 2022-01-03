@@ -1,6 +1,9 @@
 import os
-from flask import Flask, render_template, request, url_for, flash
-import pymongo
+from flask import (
+    Flask, render_template, redirect, 
+    request, session, url_for, flash)
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 if os.path.exists("env.py"):
     import env
 
@@ -8,22 +11,11 @@ if os.path.exists("env.py"):
 app = Flask(__name__)
 
 
-MONGO_URI = os.environ.get("MONGO_URI")
-DATABASE = "ms3_seriesdb"
-COLLECTION = "series"
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.secret_key = os.environ.get("SECRET_KEY")
 
-
-def mongo_connect(url):
-    try:
-        conn = pymongo.MongoClient(url)
-        return conn
-    except pymongo.errors.ConnectionFailure as e:
-        print("Could not connect to MongoDB: %s") % e
-
-
-conn = mongo_connect(MONGO_URI)
-
-coll = conn[DATABASE][COLLECTION]
+mongo = PyMongo(app)
 
 
 @app.route("/")
