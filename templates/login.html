@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container-fluid vh-100" style="margin-top:100px">
+
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h4 id="flash-message">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
     <div class="" style="margin-top:200px">
         <div class="rounded d-flex justify-content-center">
             <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
@@ -8,21 +22,21 @@
                     <h3 class="text-primary">Log in to your Account</h3>
                 </div>
                 <div class="p-4">
-                    <form action="">
+                    <form method="POST" action="{{ url_for('login') }}">
                         <div class="input-group mb-3">
                             <span class="input-group-text bg-primary"><i
                                     class="bi bi-person-plus-fill text-white"></i></span>
-                            <input type="text" class="form-control" placeholder="Username">
+                            <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" required placeholder="Username">
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text bg-primary"><i
                                     class="bi bi-key-fill text-white"></i></span>
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control validate" required placeholder="Password">
                         </div>
                         <div class="d-grid col-12 mx-auto">
-                            <button class="btn btn-primary" type="button"><span></span>Log In &nbsp;<i class="fas fa-sign-in-alt"></i></button>
+                            <button class="btn btn-primary" type="submit"><span></span>Log In &nbsp;<i class="fas fa-sign-in-alt"></i></button>
                         </div>
-                        <p class="text-center mt-3">Forgot your Password?
+                        <p class="text-center mt-3">New Here?
                             <a class="text-decoration-none" href="{{ url_for('register') }}">
                                 <span class="text-primary">Click Here</span>
                             </a>   
