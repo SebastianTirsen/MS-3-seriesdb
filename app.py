@@ -55,7 +55,8 @@ def contact():
 
 @app.route("/profile")
 def profile():
-    return render_template("profile.html")
+    users = mongo.db.users.find()
+    return render_template("profile.html", users=users)
 
 
 @app.route("/show")

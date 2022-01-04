@@ -4,12 +4,14 @@
     <div class="profile_card">
         <div class="info"> <h3 class="text-primary">Profile</h3> <button class="btn btn-primary" id="savebutton">edit</button> </div>
         <div class="forms">
-            <div class="inputs"> <span>Your Name</span> <input type="text" readonly value="John"> </div>
+            {% for user in users %}
+            <div class="inputs"> <span>Your Name</span> <input type="text" readonly value="{{ user.name }}"></div>
             
-            <div class="inputs"> <span>Email</span> <input type="text" readonly value="john.doe12@gmail.com"> </div>
-            <div class="inputs"> <span>UserName</span> <input type="text" readonly value="johndoe12"> </div>
-            <div class="inputs"> <span>Password</span> <input type="text" readonly value="Sebbe123"> </div>
+            <div class="inputs"> <span>Email</span> <input type="text" readonly value="{{ user.email }}"></div>
+            <div class="inputs"> <span>UserName</span> <input type="text" readonly value="{{ user.username }}"></div>
+            <div class="inputs"> <span>Password</span> <input type="text" readonly value="{{ user.password }}"></div>
+            {% endfor %}
         </div>
-    </div>
+    </div>        
 </div>
 {% endblock %}
