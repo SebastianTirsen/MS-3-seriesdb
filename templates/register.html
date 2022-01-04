@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container-fluid vh-100" style="margin-top:100px">
+
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h4 id="flash-message">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
     <div class="" style="margin-top:200px">
         <div class="rounded d-flex justify-content-center">
             <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
@@ -12,32 +26,34 @@
                         <div class="input-group mb-3">
                             <span class="input-group-text bg-primary"><i
                                     class="bi bi-person-plus-fill text-white"></i></span>
-                            <input id="name" name="name" type="text" class="form-control" placeholder="Your Name">
+                            <input id="name" name="name" type="text" minlength="2" maxlength="25" class="form-control validate" pattern="^[a-zA-Z]{2,25}$" placeholder="Your Name" required>
                         </div>
 
                         <div class="input-group mb-3">
-                            <span class="input-group-text bg-primary"><i
-                                    class="bi bi-envelope text-white"></i></span>
-                            <input id="email"  name="email" type="email" class="form-control" placeholder="Email">
+                            <span class="input-group-text bg-primary"><i class="bi bi-envelope text-white"></i></span>
+                            <input id="email" name="email" type="email" class="form-control validate" placeholder="Email" required>
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text bg-primary"><i
                                     class="bi bi-person-plus-fill text-white"></i></span>
-                            <input id="username" name="username" type="text" minlength="3" maxlength="16" pattern="^[a-zA-Z0-9]{3,16}$" class="form-control validate" required type="text" placeholder="Username">
+                            <input id="username" name="username" type="text" minlength="3" maxlength="16"
+                                pattern="^[a-zA-Z0-9]{3,16}$" class="form-control validate" required type="text"
+                                placeholder="Username">
                         </div>
 
                         <div class="input-group mb-3">
-                            <span class="input-group-text bg-primary"><i
-                                    class="bi bi-key-fill text-white"></i></span>
-                            <input id="password" name="password" type="password" minlength="3" maxlength="16" pattern="^[a-zA-Z0-9]{3,16}$" class="form-control validate" required placeholder="Password">
+                            <span class="input-group-text bg-primary"><i class="bi bi-key-fill text-white"></i></span>
+                            <input id="password" name="password" type="password" minlength="3" maxlength="16"
+                                pattern="^[a-zA-Z0-9]{3,16}$" class="form-control validate" required
+                                placeholder="Password">
                         </div>
                         <div class="d-grid col-12 mx-auto">
-                            <button class="btn btn-primary" type="submit"><span></span>Register</button>
+                            <button class="btn btn-primary" type="submit"><span></span>Register &nbsp;<i class="fas fa-sign-in-alt"></i></button>
                         </div>
-                        <p class="text-center mt-3">Already have an account?
+                            <p class="text-center mt-3">Already have an account?
                             <a class="text-decoration-none" href="{{ url_for('login') }}">
                                 <span class="text-primary">Sign in</span>
-                            </a>   
+                            </a>
                         </p>
                     </form>
                 </div>
