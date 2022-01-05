@@ -2,7 +2,7 @@
 {% block content %}
 <div class="profile_container">
     <div class="profile_card">
-        <div class="info"> <h3 class="text-primary">Profile</h3> <button class="btn btn-primary" id="savebutton">edit</button> </div>
+        <div class="info"> <h3 class="text-primary">{{ username }}'s Profile</h3> <button class="btn btn-primary" id="savebutton">edit</button> </div>
         <div class="forms">
             {% for user in users %}
             <div class="inputs"> <span>Your Name</span> <input type="text" readonly value="{{ user.name }}"></div>
