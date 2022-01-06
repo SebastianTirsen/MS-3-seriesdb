@@ -43,7 +43,7 @@
 							{% if session.user %}
 							<li><a class="dropdown-item" href="{{ url_for('profile', username=session['user']) }}">Your Profile</a></li>
 							<li><a class="dropdown-item" href="{{ url_for('cards') }}">All Shows</a></li>
-							<li><a class="dropdown-item" href="{{ url_for('post_delete') }}">New post</a></li>
+							<li><a class="dropdown-item" href="{{ url_for('post_delete') }}">New Show</a></li>
 							<li><a class="dropdown-item" href="{{ url_for('logout') }}">Log Out</a></li>
 							{% else %}
 							<li><a class="dropdown-item" href="{{ url_for('login') }}">Log In</a></li>
@@ -84,7 +84,7 @@
 <footer class="text-center text-lg-start bg-light text-muted">
 	<!-- Section: Social media -->
 	<section
-	  class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+	  class="d-flex justify-content-center justify-content-lg p-4 border-bottom"
 	>
 	  <!-- Left -->
 	  <div class="me-5 d-none d-lg-block">
