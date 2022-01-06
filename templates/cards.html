@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
+<div id="contact-heading" class="col-lg-8 col-md-10 mx-auto">
+  <h1>All Shows</h1>
+</div>
+
 <div id="block_container">
+
   <div>
-
-
 
     <div id="search" class="row">
       <div class="mx-auto">
@@ -17,8 +20,6 @@
           </div>
       </div>
   </div>
-
-
     <div class="show_container">
       <figure class="movie">
         <div class="movie__hero">
@@ -28,7 +29,6 @@
             </span>4.5</p>
           </div>
           <img src="{{ url_for('static', filename='img/Game-of-Thrones-Ending.jpeg') }}" alt="Game of Thrones" class="movie__img">
-
         <div class="movie-data">
           <p class="movie__detail"><i class="fas fa-film"></i>&nbsp;2011</p>
           <div class="movie__tag movie__tag--1">Adventure</div>
@@ -57,33 +57,55 @@
               <div class="reviews">
                 <h5>User Reviews</h5>
                 <div class="review">
-                  <p class="user">David</p>
+                  <div class="name-star">
+                    <p class="user">David</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>4</p>
+                  </div>
                   <p>I think this show was totally awesome. I gave it five stars and will watch it all over again soon. My best recommendations!</p>
                 </div>
                 <div class="review">
-                  <p class="user">Loreen</p>
+                  <div class="name-star">
+                    <p class="user">Loreen</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>4</p>
+                  </div>
                   <p>A clearly overrated show. Too much blood and violence. I gave it three stars beacuse of the great actors. Ok to watch.</p>
                 </div>
                 <div class="review">
-                  <p class="user">Gabriel</p>
+                  <div class="name-star">
+                    <p class="user">Gabriel</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>4</p>
+                  </div>
                   <p>I really like Spiderman, No Way Home. That was a great movie!</p>
                 </div>
                 <div class="review">
-                  <p class="user">Lukas</p>
+                  <div class="name-star">
+                    <p class="user">Lukas</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>4</p>
+                  </div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur perspiciatis molestiae laboriosam inventore corrupti quas expedita labore, tempora amet animi aliquid consectetur quasi perferendis quia ipsa repellendus dicta nemo.</p>
                 </div>
                 <div class="review">
-                  <p class="user">Magnus</p>
+                  <div class="name-star">
+                    <p class="user">Magnus</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>5</p>
+                  </div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur perspiciatis molestiae laboriosam inventore corrupti quas expedita labore, tempora amet animi aliquid consectetur quasi perferendis quia ipsa repellendus dicta nemo.</p>
                 </div>
               </div>
             </div>
           </div>
           <button class="btn btn-lg btn-primary" type="button" id="">
-            Edit
-          </button>
-          <button class="btn btn-lg btn-primary" type="button" id="">
-            Delete
+            Rate!
           </button>
         </div>
         </div>
@@ -128,33 +150,55 @@
               <div class="reviews">
                 <h5>User Reviews</h5>
                 <div class="review">
-                  <p class="user">David</p>
+                  <div class="name-star">
+                    <p class="user">David</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>4</p>
+                  </div>
                   <p>I think this show was totally awesome. I gave it five stars and will watch it all over again soon. My best recommendations!</p>
                 </div>
                 <div class="review">
-                  <p class="user">Loreen</p>
+                  <div class="name-star">
+                    <p class="user">Loreen</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>4</p>
+                  </div>
                   <p>A clearly overrated show. Too much blood and violence. I gave it three stars beacuse of the great actors. Ok to watch.</p>
                 </div>
                 <div class="review">
-                  <p class="user">Gabriel</p>
+                  <div class="name-star">
+                    <p class="user">Gabriel</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>4</p>
+                  </div>
                   <p>I really like Spiderman, No Way Home. That was a great movie!</p>
                 </div>
                 <div class="review">
-                  <p class="user">Lukas</p>
+                  <div class="name-star">
+                    <p class="user">Lukas</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>4</p>
+                  </div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur perspiciatis molestiae laboriosam inventore corrupti quas expedita labore, tempora amet animi aliquid consectetur quasi perferendis quia ipsa repellendus dicta nemo.</p>
                 </div>
                 <div class="review">
-                  <p class="user">Magnus</p>
+                  <div class="name-star">
+                    <p class="user">Magnus</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>5</p>
+                  </div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur perspiciatis molestiae laboriosam inventore corrupti quas expedita labore, tempora amet animi aliquid consectetur quasi perferendis quia ipsa repellendus dicta nemo.</p>
                 </div>
               </div>
             </div>
           </div>
           <button class="btn btn-lg btn-primary" type="button" id="">
-            Edit
-          </button>
-          <button class="btn btn-lg btn-primary" type="button" id="">
-            Delete
+            Rate!
           </button>
         </div>
         </div>
@@ -200,33 +244,55 @@
               <div class="reviews">
                 <h5>User Reviews</h5>
                 <div class="review">
-                  <p class="user">David</p>
+                  <div class="name-star">
+                    <p class="user">David</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>4</p>
+                  </div>
                   <p>I think this show was totally awesome. I gave it five stars and will watch it all over again soon. My best recommendations!</p>
                 </div>
                 <div class="review">
-                  <p class="user">Loreen</p>
+                  <div class="name-star">
+                    <p class="user">Loreen</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>4</p>
+                  </div>
                   <p>A clearly overrated show. Too much blood and violence. I gave it three stars beacuse of the great actors. Ok to watch.</p>
                 </div>
                 <div class="review">
-                  <p class="user">Gabriel</p>
+                  <div class="name-star">
+                    <p class="user">Gabriel</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>4</p>
+                  </div>
                   <p>I really like Spiderman, No Way Home. That was a great movie!</p>
                 </div>
                 <div class="review">
-                  <p class="user">Lukas</p>
+                  <div class="name-star">
+                    <p class="user">Lukas</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>4</p>
+                  </div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur perspiciatis molestiae laboriosam inventore corrupti quas expedita labore, tempora amet animi aliquid consectetur quasi perferendis quia ipsa repellendus dicta nemo.</p>
                 </div>
                 <div class="review">
-                  <p class="user">Magnus</p>
+                  <div class="name-star">
+                    <p class="user">Magnus</p>&nbsp;
+                    <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                      </span>5</p>
+                  </div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur perspiciatis molestiae laboriosam inventore corrupti quas expedita labore, tempora amet animi aliquid consectetur quasi perferendis quia ipsa repellendus dicta nemo.</p>
                 </div>
               </div>
             </div>
           </div>
           <button class="btn btn-lg btn-primary" type="button" id="">
-            Edit
-          </button>
-          <button class="btn btn-lg btn-primary" type="button" id="">
-            Delete
+            Rate!
           </button>
         </div>
         </div>

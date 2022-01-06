@@ -40,13 +40,17 @@
 						  Menu
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-						  <li><a class="dropdown-item" href="{{ url_for('post_delete') }}">New post</a></li>
-						  <li><a class="dropdown-item" href="{{ url_for('cards') }}">All Shows</a></li>
-						  <li><a class="dropdown-item" href="{{ url_for('login') }}">Log In</a></li>
-						  <li><a class="dropdown-item" href="{{ url_for('register') }}">Register</a></li>
-						  <li><a class="dropdown-item" href="{{ url_for('contact') }}">Contact</a></li>
-						  <li><hr class="dropdown-divider"></li>
-						  <li><a class="dropdown-item" href="{{ url_for('profile', username=session['user']) }}">Your Profile</a></li>
+							{% if session.user %}
+							<li><a class="dropdown-item" href="{{ url_for('profile', username=session['user']) }}">Your Profile</a></li>
+							<li><a class="dropdown-item" href="{{ url_for('cards') }}">All Shows</a></li>
+							<li><a class="dropdown-item" href="{{ url_for('post_delete') }}">New post</a></li>
+							<li><a class="dropdown-item" href="{{ url_for('logout') }}">Log Out</a></li>
+							{% else %}
+							<li><a class="dropdown-item" href="{{ url_for('login') }}">Log In</a></li>
+							<li><a class="dropdown-item" href="{{ url_for('register') }}">Register</a></li>
+
+							{% endif %}
+							<li><a class="dropdown-item" href="{{ url_for('contact') }}">Contact</a></li>
 						</ul>
 					</li>
 
