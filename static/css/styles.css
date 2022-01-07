@@ -283,7 +283,7 @@ body {
   .reviews {
       margin: 5px;
       height: 300px;
-      width: 400px;
+      width: 284px;
       overflow: scroll;
   }
 
@@ -307,4 +307,10 @@ body {
 
   .name-star {
       display: flex;
+  }
+
+  #rate_button {
+      margin-top: 20px;
+      align-items: center;
+      width: 86%;
   }
