@@ -164,13 +164,14 @@ body {
     max-width: 100%;
     border-radius: 5px;
     display: flex;
-    box-shadow: 0 5px 20px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, .2);
    overflow: hidden;
 }
 
 .movie__hero {
   flex: 0 0 45%;
   margin: 20px;
+  margin-right: 0;
 }
 
 .movie__img {
@@ -237,7 +238,10 @@ body {
 }
 
 .movie__description {
+    text-align: justify;
+    height: 200px;
     font-size: 16px;
+    overflow: scroll;
 }
 
 .movie__details {
@@ -281,9 +285,8 @@ body {
   }  
 
   .reviews {
-      margin: 5px;
       height: 300px;
-      width: 284px;
+      width: 100%;
       overflow: scroll;
   }
 
@@ -310,7 +313,22 @@ body {
   }
 
   #rate_button {
-      margin-top: 20px;
-      align-items: center;
-      width: 86%;
+    font-size: 18px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+    justify-content: center;   
+    width: 50%;
+  }
+
+  #accordion_body {
+      padding: 1rem 0 0 0;
+  }
+
+  .story_heading {
+      font-style: italic;
+  }
+
+  #accordion-button-text {
+      font-size: 18px;
   }
