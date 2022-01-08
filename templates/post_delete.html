@@ -4,107 +4,114 @@
   <h1>Post New Show</h1>
 </div>
 <div id="shows_container">
-  <form>
+  <form role="form" method="POST" action="{{ url_for('post_delete')}}">
     <!-- column grid layout with dropdowns and text inputs -->
     <div class="row mb-4">
 
       <div class="col mb-4">
         <div class="form-outline">
           <label class="Visually-hidden" for="inlineFormSelectPref"></label>
-          <select class="select form-control">
+          <select class="select form-control" name="genre">
             <option value="" disabled selected>Genre ▼</i></option>
-            <option value="1">Action</option>
-            <option value="2">Comedy</option>
-            <option value="3">Drama</option>
-            <option value="4">Fantasy</option>
-            <option value="5">Horror</option>
-            <option value="6">Mystery</option>
-            <option value="7">Romance</option>
-            <option value="8">Thriller</option>
-            <option value="8">Western</option>
+            <option value="Action">Action</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Horror">Horror</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Romance">Romance</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Western">Western</option>
           </select>
         </div>
       </div>
       <div class="col">
         <div class="form-outline">
           <label class="Visually-hidden" for="inlineFormSelectPref"></label>
-          <select class="select form-control">
+          <select class="select form-control" name="parental_guidance">
             <option value="" disabled selected>Parental Guidance ▼</option>
-            <option value="1">+7 years</option>
-            <option value="2">+11 years</option>
-            <option value="3">+13 years</option>
-            <option value="4">+15 years</option>
-            <option value="5">+16 years</option>
-            <option value="6">+17 years</option>
-            <option value="7">+18 years</option>
+            <option value="+7 years">+7 years</option>
+            <option value="+11 years">+11 years</option>
+            <option value="+13 years">+13 years</option>
+            <option value="+15 years">+15 years</option>
+            <option value="+16 years">+16 years</option>
+            <option value="+17 years">+17 years</option>
+            <option value="+18 years">+18 years</option>
           </select>
         </div>
       </div>
       <div class="col">
         <div class="form-outline">
           <label class="Visually-hidden" for="inlineFormSelectPref"></label>
-          <select class="select form-control">
+          <select class="select form-control" name="country">
             <option value="" disabled selected>Country ▼</option>
-            <option value="1">India</option>
-            <option value="2">US</option>
-            <option value="3">China</option>
-            <option value="4">Japan</option>
-            <option value="5">France</option>
-            <option value="6">Spain</option>
-            <option value="7">South Korea</option>
-            <option value="8">Italy</option>
-            <option value="8">Germany</option>
-            <option value="8">UK</option>
-            <option value="8">Russian Fed</option>
-            <option value="8">Argentina</option>
-            <option value="8">Indonesia</option>
-            <option value="8">Brazil</option>
-            <option value="8">Philippines</option>
-            <option value="8">Mexico</option>
-            <option value="8">Turkey</option>
-            <option value="8">Hong Kong</option>
-            <option value="8">Netherlands</option>
-            <option value="8">Austria</option>
-            <option value="8">Sweden</option>
-            <option value="8">Poland</option>
-            <option value="8">Taiwan</option>
-            <option value="8">Malaysia</option>
-            <option value="8">Finland</option>
-            <option value="8">Czech Republ</option>
-            <option value="8">Australia</option>
-            <option value="8">Belgium</option>
-            <option value="8">Denmark</option>
+            <option value="India">India</option>
+            <option value="US">US</option>
+            <option value="China">China</option>
+            <option value="Japan">Japan</option>
+            <option value="France">France</option>
+            <option value="Spain">Spain</option>
+            <option value="South Korea">South Korea</option>
+            <option value="Italy">Italy</option>
+            <option value="Germany">Germany</option>
+            <option value="UK">UK</option>
+            <option value="Russian Fed">Russian Fed</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Philippines">Philippines</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Turkey">Turkey</option>
+            <option value="Hong Kong">Hong Kong</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="Austria">Austria</option>
+            <option value="Sweden">Sweden</option>
+            <option value="Poland">Poland</option>
+            <option value="Taiwan">Taiwan</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Finland">Finland</option>
+            <option value="Czech Republ">Czech Republ</option>
+            <option value="Australia">Australia</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Denmark">Denmark</option>
           </select>
         </div>
       </div>
       <div class="col">
         <div class="form-outline">
           <label class="Visually-hidden" for="inlineFormSelectPref"></label>
-          <select class="select form-control">
+          <select class="select form-control" name="year">
             <option value="" disabled selected>Year ▼</option>
-            <option value="1">2000</option>
-            <option value="2">2001</option>
-            <option value="3">2002</option>
-            <option value="4">2003</option>
-            <option value="5">2004</option>
-            <option value="6">2005</option>
-            <option value="7">2006</option>
-            <option value="8">2008</option>
-            <option value="9">2009</option>
-            <option value="10">2010</option>
-            <option value="11">2011</option>
-            <option value="12">2012</option>
-            <option value="13">2013</option>
-            <option value="14">2014</option>
-            <option value="15">2015</option>
-            <option value="16">>2015</option>
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
           </select>
         </div>
       </div>
       <div class="col">
         <div class="form-outline">
           <label class="Visually-hidden" for="inlineFormSelectPref"></label>
-          <select class="select form-control">
+          <select class="select form-control" name="seasons">
             <option value="" disabled selected>Seasons ▼</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -121,7 +128,7 @@
             <option value="13">13</option>
             <option value="14">14</option>
             <option value="15">15</option>
-            <option value="16">>15</option>
+            <option value="16">>16</option>
           </select>
         </div>
       </div>
@@ -129,31 +136,31 @@
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form6Example3">Title of Show</label>
-        <input type="text" id="form6Example3" class="form-control" />
+        <input type="text" name="title" id="form6Example3" class="form-control" />
       </div>
 
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form6Example4">Director</label>
-        <input type="text" id="form6Example4" class="form-control" />
+        <input type="text" name="director" id="form6Example4" class="form-control" />
       </div>
 
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form6Example4">Starring</label>
-        <input type="text" id="form6Example4" class="form-control" />
+        <input type="text" name="starring" id="form6Example4" class="form-control" />
       </div>
 
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form6Example4">Picture Link</label>
-        <input type="text" id="form6Example4" class="form-control" />
+        <input type="text" name="picture" id="form6Example4" class="form-control" />
       </div>
 
       <!-- Message input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form6Example7">Synopsis:</label>
-        <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+        <textarea class="form-control" name="synopsis" id="form6Example7" rows="4"></textarea>
       </div>
 
       <!-- Submit button -->

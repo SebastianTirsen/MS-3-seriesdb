@@ -80,14 +80,36 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/post_delete")
+@app.route("/post_delete", methods=["GET", "POST"])
 def post_delete():
+    if request.method == "POST":
+        # Bara för att se vad som skickas till dbn - visas i konsolfönstret. Ej nödvändig.
+        req = request.form # Sparar allt från seriestabellen
+        print(req) # Printar i konsolen    
+        
+        selection = {
+            "country": request.form.get("country"),
+            "director": request.form.get("director"),
+            "genre": request.form.get("genre"),
+            "parental_guidance": request.form.get("parental_guidance"),
+            "picture": request.form.get("picture"),
+            "seasons": request.form.get("seasons"),
+            "starring": request.form.get("starring"),
+            "synopsis": request.form.get("synopsis"),
+            "title": request.form.get("title"),
+            "year": request.form.get("year"),
+        }
+        mongo.db.series.insert_one(selection)       
+        
+        return redirect(request.url)
+    
     return render_template("post_delete.html")
 
 
 @app.route("/cards")
 def cards():
-    return render_template("cards.html")
+    cards = mongo.db.series.find({})
+    return render_template("cards.html", cards=cards)
 
 
 @app.route("/contact", methods=["GET", "POST"])
