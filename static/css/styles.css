@@ -60,10 +60,6 @@
         width: 60%;
         margin: 0 auto 50px;
     }
-
-    .sort-btn {
-      height: 100px;
-    }
     
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -338,6 +334,10 @@ margin: 26px;
 
   #sort_buttons {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin: 30px;
+  }
+
+  #sort_btn {
+      font-size: 18px;
   }
