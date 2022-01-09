@@ -71,7 +71,6 @@
     
     .profile_container {
         margin-top: 50px;
-        margin-bottom: 500px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -336,8 +335,25 @@ margin: 26px;
     display: flex;
     justify-content: space-around;
     margin: 30px;
+    font-size: 18px;
   }
 
   #sort_btn {
       font-size: 18px;
+  }
+
+  #submit_btn {
+      display: flex;
+      margin: 0 auto;
+      font-size: 18px;
+  }
+
+  .mb_100 {
+      margin-bottom: 100px;
+  }
+
+  #contact_btn {
+    display: flex;
+    margin: 0 auto;
+    font-size: 18px;
   }
