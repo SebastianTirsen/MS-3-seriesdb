@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="post-heading" class="col-lg-8 col-md-10 mx-auto">
+
+  <section>
+    <!-- flash messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="row flashes">
+                    <h4 id="flash-message">{{ message }}</h4>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</section>
+
   <h1>Post New Show</h1>
 </div>
 <div id="shows_container">

@@ -100,7 +100,7 @@ def post_delete():
             "year": request.form.get("year"),
         }
         mongo.db.series.insert_one(selection)       
-        
+        flash("Post Successful!")
         return redirect(request.url)
     
     return render_template("post_delete.html")
