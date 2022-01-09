@@ -58,45 +58,48 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form>
-                    <div class="rating_box">
-                      
 
+
+                  <section>
+                    <!-- flash messages -->
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="row flashes">
+                                    <h4 id="flash-message">{{ message }}</h4>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </section>
+
+
+
+                  <form role="form" method="POST" action="{{ url_for('ratings')}}">
+                    <div class="rating_box">
                         <label for="star1" class="col-form-label">Your Rating:</label>
                         <div class="rate">
-                          <input type="radio" id="star5" name="rate" value="5" />
+                          <input type="radio" id="star5" name="rating" value="5" />
                           <label for="star5" title="text">5 stars</label>
-                          <input type="radio" id="star4" name="rate" value="4" />
+                          <input type="radio" id="star4" name="" value="4" />
                           <label for="star4" title="text">4 stars</label>
-                          <input type="radio" id="star3" name="rate" value="3" />
+                          <input type="radio" id="star3" name="" value="3" />
                           <label for="star3" title="text">3 stars</label>
-                          <input type="radio" id="star2" name="rate" value="2" />
+                          <input type="radio" id="star2" name="" value="2" />
                           <label for="star2" title="text">2 stars</label>
-                          <input type="radio" id="star1" name="rate" value="1" />
+                          <input type="radio" id="star1" name="" value="1" />
                           <label for="star1" title="text">1 star</label>
                         </div>
-
-
-                      <!-- <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                        <div class="btn-group me-2" role="group" aria-label="First group">
-                          <button type="button" class="btn"><i class="fas fa-star icons icons-yellow"></i></button>
-                          <button type="button" class="btn"><i class="fas fa-star icons icons-yellow"></i></button>
-                          <button type="button" class="btn"><i class="fas fa-star icons icons-yellow"></i></button>
-                          <button type="button" class="btn"><i class="fas fa-star icons icons-yellow"></i></button>
-                          <button type="button" class="btn"><i class="fas fa-star icons icons-yellow"></i></button>
-                        </div>
-                      </div> -->
-
                     </div>
                     <div class="mb-3">
                       <label for="message-text" class="col-form-label">Your Review:</label>
-                      <textarea class="form-control" id="message-text"></textarea>
+                      <textarea class="form-control" name="review" id="message-text"></textarea>
                     </div>
                   </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save Rating</button>
+                  <button type="submit" class="btn btn-primary">Save Rating</button>
                 </div>
               </div>
             </div>

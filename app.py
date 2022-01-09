@@ -135,10 +135,23 @@ def logout():
     return redirect(url_for("login"))
 
 
-
-@app.route("/show")
-def show():
-    return render_template("show.html")
+@app.route("/ratings", methods=["GET", "POST"])
+def ratings():
+    if request.method == "POST":
+        # Bara för att se vad som skickas till dbn - visas i konsolfönstret. Ej nödvändig.
+        req = request.form # Sparar allt från tabellen
+        print(req) # Printar i konsolen    
+        
+        ratings = {
+            "rating": request.form.get("rating"),
+            "review": request.form.get("review"),
+            "created_by": session["user"],
+        }
+        mongo.db.ratings.insert_one(ratings)       
+        flash("Rating Successful!")
+        return redirect(request.url)
+    
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
