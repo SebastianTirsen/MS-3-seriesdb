@@ -142,16 +142,17 @@ def ratings():
         req = request.form # Sparar allt från tabellen
         print(req) # Printar i konsolen    
         
-        ratings = {
-            "rating": request.form.get("rating"),
+        grades = {
+            "rating": request.form["rating"],
             "review": request.form.get("review"),
             "created_by": session["user"],
         }
-        mongo.db.ratings.insert_one(ratings)       
+        print(grades)
+        mongo.db.ratings.insert_one(grades)       
         flash("Rating Successful!")
         return redirect(request.url)
     
-    return render_template("index.html")
+    return render_template("cards.html")
 
 
 if __name__ == "__main__":

@@ -81,13 +81,13 @@
                         <div class="rate">
                           <input type="radio" id="star5" name="rating" value="5" />
                           <label for="star5" title="text">5 stars</label>
-                          <input type="radio" id="star4" name="" value="4" />
+                          <input type="radio" id="star4" name="rating" name="" value="4" />
                           <label for="star4" title="text">4 stars</label>
-                          <input type="radio" id="star3" name="" value="3" />
+                          <input type="radio" id="star3" name="rating" name="" value="3" />
                           <label for="star3" title="text">3 stars</label>
-                          <input type="radio" id="star2" name="" value="2" />
+                          <input type="radio" id="star2" name="rating" name="" value="2" />
                           <label for="star2" title="text">2 stars</label>
-                          <input type="radio" id="star1" name="" value="1" />
+                          <input type="radio" id="star1" name="rating" name="" value="1" />
                           <label for="star1" title="text">1 star</label>
                         </div>
                     </div>
@@ -95,12 +95,15 @@
                       <label for="message-text" class="col-form-label">Your Review:</label>
                       <textarea class="form-control" name="review" id="message-text"></textarea>
                     </div>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Save Rating</button>
+                    </div>
+
                   </form>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Save Rating</button>
-                </div>
+                
               </div>
             </div>
           </div>
