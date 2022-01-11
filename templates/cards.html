@@ -116,6 +116,7 @@
           <h5 class="story_heading">Story:</h5>
           <p class="movie__description">{{ card.synopsis }}</p>
           <hr>
+          
           <div class="card-buttons">
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item">
@@ -128,57 +129,24 @@
                   <div id="accordion_body" class="#">
                     <div class="reviews">
                       <h5>User Reviews</h5>
+                      {% for review in reviews %}
                       <div class="review">
                         <div class="name-star">
-                          <p class="user">David</p>&nbsp;
+                          <p class="user">{{ review.created_by }}</p>&nbsp;
                           <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
                           class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                           </span>4</p>
                         </div>
-                        <p>I think this show was totally awesome. I gave it five stars and will watch it all over again soon. My best recommendations!</p>
+                        <p>{{ review.review }}</p>
                       </div>
-                      <div class="review">
-                        <div class="name-star">
-                          <p class="user">Loreen</p>&nbsp;
-                          <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
-                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                          </span>4</p>
-                        </div>
-                        <p>A clearly overrated show. Too much blood and violence. I gave it three stars beacuse of the great actors. Ok to watch.</p>
-                      </div>
-                      <div class="review">
-                        <div class="name-star">
-                          <p class="user">Gabriel</p>&nbsp;
-                          <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
-                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                          </span>4</p>
-                        </div>
-                        <p>I really like Spiderman, No Way Home. That was a great movie!</p>
-                      </div>
-                      <div class="review">
-                        <div class="name-star">
-                          <p class="user">Lukas</p>&nbsp;
-                          <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
-                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                          </span>4</p>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur perspiciatis molestiae laboriosam inventore corrupti quas expedita labore, tempora amet animi aliquid consectetur quasi perferendis quia ipsa repellendus dicta nemo.</p>
-                      </div>
-                      <div class="review">
-                        <div class="name-star">
-                          <p class="user">Magnus</p>&nbsp;
-                          <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
-                          class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                          </span>5</p>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur perspiciatis molestiae laboriosam inventore corrupti quas expedita labore, tempora amet animi aliquid consectetur quasi perferendis quia ipsa repellendus dicta nemo.</p>
-                      </div>
+                      {% endfor %}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
         <div class="movie__price">#1</div>
       </figure>
