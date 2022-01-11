@@ -34,7 +34,7 @@
             <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i>
             </span>4.5</p>
           </div>
-          <img src="{{ url_for('static', filename='img/Game-of-Thrones-Ending.jpeg') }}" alt="Game of Thrones" class="movie__img">
+          <img src="{{card.picture}}" alt="Picture for series" class="movie__img">
         <div class="movie-data">
           <p class="movie__detail"><i class="fas fa-film"></i>&nbsp;{{card.year}}</p>
           <div class="movie__tag movie__tag--1">{{card.genre}}</div>
