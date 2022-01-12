@@ -61,9 +61,9 @@
 
                   <form role="form" method="POST" action="{{ url_for('ratings')}}">
                     <div class="rating_box">
-                        <label for="star1" class="col-form-label">Your Rating:</label>
+                        <label for="" class="col-form-label">Your Rating:</label>
                         <div class="rate">
-                          <input type="radio" id="star5" name="rating" value="5" />
+                          <input type="radio" id="star5" name="rating" value="5"/>
                           <label for="star5" title="text">5 stars</label>
                           <input type="radio" id="star4" name="rating" value="4" />
                           <label for="star4" title="text">4 stars</label>
@@ -73,8 +73,8 @@
                           <label for="star2" title="text">2 stars</label>
                           <input type="radio" id="star1" name="rating" value="1" />
                           <label for="star1" title="text">1 star</label>
-                          <input type="hidden" id="show" name="show" value="{{ card.title }}">
                         </div>
+                        <input type="hidden" id="show" name="show" value="{{ card.title }}">
                     </div>
                     <div class="mb-3">
                       <label for="message-text" class="col-form-label">Your Review:</label>
@@ -103,12 +103,13 @@
           <div class="card-buttons">
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item">
+                
                 <h2 class="accordion-header" id="flush-headingOne">
-                  <button class="accordion-button collapsed" type="button" id="accordion-button-text"  data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  <button class="accordion-button collapsed" type="button" id="accordion-button-text-{{card._id}}"  data-bs-toggle="collapse" data-bs-target="#flush-collapseOne-{{card._id}}" aria-expanded="false" aria-controls="flush-collapseOne">
                     Reviews
                   </button>
                 </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div id="flush-collapseOne-{{card._id}}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                   <div class="accordion_body">
                     <div class="reviews">
                       <h5>User Reviews</h5>
