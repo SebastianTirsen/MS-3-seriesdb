@@ -143,15 +143,16 @@ def ratings():
         print(req) # Printar i konsolen    
         
         grades = {
-            "rating": request.form["rating"],
+            "rating": request.form.get("rating"),
             "review": request.form.get("review"),
             "created_by": session["user"],
+            "show": request.form.get("show"),
         }
         mongo.db.ratings.insert_one(grades)       
         flash("Rating Successful!")
         return redirect(request.url)
-    cards = mongo.db.series.find({})
-    reviews = mongo.db.ratings.find({})
+    cards = list(mongo.db.series.find({}))
+    reviews = list(mongo.db.ratings.find({}))
     return render_template("cards.html", cards=cards, reviews=reviews)
 
 
