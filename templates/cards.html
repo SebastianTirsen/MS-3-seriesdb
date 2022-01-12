@@ -4,142 +4,145 @@
   <h1>All Shows</h1>
 </div>
 <div id="block_container">
-  <div>
-    <div id="search" class="row">
-      <div class="mx-auto">
-          <div class="input-group">
-              <input class="form-control border-end-0 border" type="search" placeholder="Search" id="example-search-input">
-              <span class="input-group-append">
-                  <button class="btn btn-outline-secondary bg-white border-start-0 border ms-n5" type="button">
-                      <i class="fa fa-search"></i>
-                  </button>
-              </span>
-          </div>
+  <div id="search" class="row">
+    <div class="mx-auto">
+      <div class="input-group">
+        <input class="form-control border-end-0 border" type="search" placeholder="Search" id="example-search-input">
+        <span class="input-group-append">
+          <button class="btn btn-outline-secondary bg-white border-start-0 border ms-n5" type="button">
+            <i class="fa fa-search"></i>
+          </button>
+        </span>
       </div>
+    </div>
   </div>
-
+  <!-- Sort-buttons -->
   <div id="sort_buttons">
     <button id="sort_btn" class="btn btn-lg btn-primary" type="button">Filter <i class="fas fa-filter"></i></button>
-    <button id="sort_btn" class="btn btn-lg btn-primary" type="button">Sort by Rank <i class="fas fa-medal"></i></button>
-    <button id="sort_btn" class="btn btn-lg btn-primary" type="button">Sort by Rating <i class="far fa-star"></i></button>
-    <button id="sort_btn" class="btn btn-lg btn-primary" type="button">Sort A-Z <i class="fas fa-arrows-alt-v"></i></button>
+    <button id="sort_btn" class="btn btn-lg btn-primary" type="button">Sort by Rank <i
+        class="fas fa-medal"></i></button>
+    <button id="sort_btn" class="btn btn-lg btn-primary" type="button">Sort by Rating <i
+        class="far fa-star"></i></button>
+    <button id="sort_btn" class="btn btn-lg btn-primary" type="button">Sort A-Z <i
+        class="fas fa-arrows-alt-v"></i></button>
   </div>
-
+  <!-- Show-cards -->
   {% for card in cards %}
-    <div class="show_container">
-      <figure class="movie">
-        <div class="movie__hero">
-          <h1 class="heading__primary">{{card.title}}</h1>
-          <div class="rating">
-            <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i>
+  <div class="show_container">
+    <figure class="movie">
+      <!-- Card left side-img,data,details, modal -->
+      <div class="movie__hero">
+        <h1 class="heading__primary">{{card.title}}</h1>
+        <div class="rating">
+          <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star-half"></i>
             </span>4.5</p>
-          </div>
-          <img src="{{card.picture}}" alt="Picture for series" class="movie__img">
+        </div>
+        <img src="{{card.picture}}" alt="Picture for series" class="movie__img">
         <div class="movie-data">
           <p class="movie__detail"><i class="fas fa-film"></i>&nbsp;{{card.year}}</p>
           <div class="movie__tag movie__tag--1">{{card.genre}}</div>
         </div>
-          <div class="movie__details">
-            <p class="movie__detail"><span></span><i class="fas fa-globe"></i></span>&nbsp;{{card.country}}</p>
-            <p class="movie__detail"><span><i class="fas fa-child"></i></span>&nbsp;{{card.parental_guidance}}</p>
-            <p class="movie__detail"><span class="icons icons-grey"><i class="fas fa-hourglass-half"></i></span>&nbsp;{{card.seasons}} seasons</p>
-          </div>
-
-          <!-- Modal button -->
-          <button class="btn btn-lg btn-primary" type="button" id="rate_button-{{card._id}}" data-bs-toggle="modal" data-bs-target="#exampleModal-{{card._id}}">
-            Rate Show
-          </button>
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal-{{card._id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="ModalLabel">Rate This Show!</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                  <form role="form" method="POST" action="{{ url_for('ratings')}}">
-                    <div class="rating_box">
-                        <label for="" class="col-form-label">Your Rating:</label>
-                        <div class="rate">
-                          <input type="radio" id="star5" name="rating" value="5"/>
-                          <label for="star5" title="text">5 stars</label>
-                          <input type="radio" id="star4" name="rating" value="4" />
-                          <label for="star4" title="text">4 stars</label>
-                          <input type="radio" id="star3" name="rating" value="3" />
-                          <label for="star3" title="text">3 stars</label>
-                          <input type="radio" id="star2" name="rating" value="2" />
-                          <label for="star2" title="text">2 stars</label>
-                          <input type="radio" id="star1" name="rating" value="1" />
-                          <label for="star1" title="text">1 star</label>
-                        </div>
-                        <input type="hidden" id="show" name="show" value="{{ card.title }}">
+        <div class="movie__details">
+          <p class="movie__detail"><span></span><i class="fas fa-globe"></i></span>&nbsp;{{card.country}}</p>
+          <p class="movie__detail"><span><i class="fas fa-child"></i></span>&nbsp;{{card.parental_guidance}}</p>
+          <p class="movie__detail"><span class="icons icons-grey"><i
+                class="fas fa-hourglass-half"></i></span>&nbsp;{{card.seasons}} seasons</p>
+        </div>
+        <!-- Modal button -->
+        <button class="btn btn-lg btn-primary" type="button" id="rate_button-{{card._id}}" data-bs-toggle="modal"
+          data-bs-target="#exampleModal-{{card._id}}">
+          Rate Show
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal-{{card._id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">Rate This Show!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form role="form" method="POST" action="{{ url_for('ratings')}}">
+                  <div class="rating_box">
+                    <label for="" class="col-form-label">Your Rating:</label>
+                    <div class="rate">
+                      <input type="radio" id="star5" name="rating" value="5" />
+                      <label for="star5" title="text">5 stars</label>
+                      <input type="radio" id="star4" name="rating" value="4" />
+                      <label for="star4" title="text">4 stars</label>
+                      <input type="radio" id="star3" name="rating" value="3" />
+                      <label for="star3" title="text">3 stars</label>
+                      <input type="radio" id="star2" name="rating" value="2" />
+                      <label for="star2" title="text">2 stars</label>
+                      <input type="radio" id="star1" name="rating" value="1" />
+                      <label for="star1" title="text">1 star</label>
                     </div>
-                    <div class="mb-3">
-                      <label for="message-text" class="col-form-label">Your Review:</label>
-                      <textarea class="form-control" name="review" id="message-text"></textarea>
-                    </div>
-
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="submit" class="btn btn-primary">Save Rating</button>
-                    </div>
-                  </form>
-
-                </div>  
+                    <input type="hidden" id="show" name="show" value="{{ card.title }}">
+                  </div>
+                  <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Your Review:</label>
+                    <textarea class="form-control" name="review" id="message-text"></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save Rating</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
-
         </div>
-        <div class="movie__content"> 
-          <p><strong>Writer:</strong> {{ card.director }}</p>
-          <p><strong>Starring:</strong> {{ card.starring }}</p>
-          <h5 class="story_heading">Story:</h5>
-          <p class="movie__description">{{ card.synopsis }}</p>
-          <hr>
-          
-          <div class="card-buttons">
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-              <div class="accordion-item">
-                
-                <h2 class="accordion-header" id="flush-headingOne">
-                  <button class="accordion-button collapsed" type="button" id="accordion-button-text-{{card._id}}"  data-bs-toggle="collapse" data-bs-target="#flush-collapseOne-{{card._id}}" aria-expanded="false" aria-controls="flush-collapseOne">
-                    Reviews
-                  </button>
-                </h2>
-                <div id="flush-collapseOne-{{card._id}}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                  <div class="accordion_body">
-                    <div class="reviews">
-                      <h5>User Reviews</h5>
-                      {% for review in reviews %}
-                          {% if review.show | lower == card.title | lower %}
-                            <div class="review">
-                              <div class="name-star">
-                                <p class="user">{{ review.created_by }}</p>&nbsp;
-                                <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </span>4</p>
-                              </div>
-                              <p>{{ review.review }}</p>
-                            </div>
-                          {% endif %}
-                      {% endfor %}
+      </div>
+      <!-- Card right side-writer,starring.story -->
+      <div class="movie__content">
+        <p><strong>Writer:</strong> {{ card.director }}</p>
+        <p><strong>Starring:</strong> {{ card.starring }}</p>
+        <h5 class="story_heading">Story:</h5>
+        <p class="movie__description">{{ card.synopsis }}</p>
+        <hr>
+        <!-- Accordion -->
+        <div class="card-buttons">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" id="accordion-button-text-{{card._id}}"
+                  data-bs-toggle="collapse" data-bs-target="#flush-collapseOne-{{card._id}}" aria-expanded="false"
+                  aria-controls="flush-collapseOne">
+                  Reviews
+                </button>
+              </h2>
+              <div id="flush-collapseOne-{{card._id}}" class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion_body">
+                  <div class="reviews">
+                    <h5>User Reviews</h5>
+                    {% for review in reviews %}
+                    {% if review.show | lower == card.title | lower %}
+                    <div class="review">
+                      <div class="name-star">
+                        <p class="user">{{ review.created_by }}</p>&nbsp;
+                        <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                              class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                          </span>4</p>
+                      </div>
+                      <p>{{ review.review }}</p>
                     </div>
+                    {% endif %}
+                    {% endfor %}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
-        <div class="movie__price">#1</div>
-      </figure>
-    </div>
-    {% endfor %}
-    
-  </div> 
+      </div>
+      <!-- Card far right-dark colored field -->
+      <div class="movie__price">#1</div>
+    </figure>
+  </div>
+  {% endfor %}
 </div>
-
-  {% endblock %}
+{% endblock %}
