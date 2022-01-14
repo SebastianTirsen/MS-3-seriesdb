@@ -34,7 +34,6 @@
   <h3 id="profile_heading">Your Posted Shows</h3>
 </div>
 {% for card in cards %}
-
   <div class="show_container">
     <figure class="movie">
       <!-- Card left side-img,data,details, modal -->
@@ -58,9 +57,11 @@
                 class="fas fa-hourglass-half"></i></span>&nbsp;{{card.seasons}} seasons</p>
         </div>
         <!-- Modal button -->
-        <button class="btn btn-lg btn-primary" type="button" id="rate_button-{{card._id}}" data-bs-toggle="modal"
-          data-bs-target="#exampleModal-{{card._id}}">
-          Rate Show
+        <button class="btn btn-lg btn-primary" type="button" id="">
+          Update
+        </button>
+        <button class="btn btn-lg btn-primary" type="button" id=""">
+          Delete
         </button>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal-{{card._id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
