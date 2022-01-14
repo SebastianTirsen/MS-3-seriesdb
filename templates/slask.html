@@ -61,8 +61,6 @@
     </div>
 
 
-
-
     <section>
       <!-- flash messages -->
       {% with messages = get_flashed_messages() %}
@@ -76,3 +74,146 @@
       {% endwith %}
   </section>
 -->
+
+------
+
+
+{% for card in cards %}
+<div id="contact-heading" class="col-lg-8 col-md-10 mx-auto">
+  <h1>Shows posted by {{ card.posted_by }}</h1>
+</div>
+<div id="block_container">
+  <!-- Show-cards -->
+  <div class="show_container">
+    <figure class="movie">
+      <!-- Card left side-img,data,details, modal -->
+      <div class="movie__hero">
+        <h1 class="heading__primary">{{card.title}}</h1>
+        <div class="rating">
+          <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star-half"></i>
+            </span>4.5</p>
+        </div>
+        <img src="{{card.picture}}" alt="Picture for series" class="movie__img">
+        <div class="movie-data">
+          <p class="movie__detail"><i class="fas fa-film"></i>&nbsp;{{card.year}}</p>
+          <div class="movie__tag movie__tag--1">{{card.genre}}</div>
+        </div>
+        <div class="movie__details">
+          <p class="movie__detail"><span></span><i class="fas fa-globe"></i></span>&nbsp;{{card.country}}</p>
+          <p class="movie__detail"><span><i class="fas fa-child"></i></span>&nbsp;{{card.parental_guidance}}</p>
+          <p class="movie__detail"><span class="icons icons-grey"><i
+                class="fas fa-hourglass-half"></i></span>&nbsp;{{card.seasons}} seasons</p>
+        </div>
+      </div>
+      <!-- Card right side-writer,starring.story -->
+      <div class="movie__content">
+        <p><strong>Writer:</strong> {{ card.director }}</p>
+        <p><strong>Starring:</strong> {{ card.starring }}</p>
+        <h5 class="story_heading">Story:</h5>
+        <p class="movie__description">{{ card.synopsis }}</p>
+        <hr>
+        <!-- Accordion -->
+        <div class="card-buttons">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" id="accordion-button-text-{{card._id}}"
+                  data-bs-toggle="collapse" data-bs-target="#flush-collapseOne-{{card._id}}" aria-expanded="false"
+                  aria-controls="flush-collapseOne">
+                  Reviews
+                </button>
+              </h2>
+              <div id="flush-collapseOne-{{card._id}}" class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion_body">
+                  <div class="reviews">
+                    <h5>User Reviews</h5>
+                    {% for review in reviews %}
+                    {% if review.show | lower == card.title | lower %}
+                    <div class="review">
+                      <div class="name-star">
+                        <p class="user">{{ review.created_by }}</p>&nbsp;
+                        <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
+                              class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                          </span>4</p>
+                      </div>
+                      <p>{{ review.review }}</p>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card far right-dark colored field -->
+      <div class="movie__price">#1</div>
+    </figure>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+
+
+-------
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists...")
+            return redirect(url_for("register"))
+
+        register = {
+            "name": request.form.get("name").lower(),
+            "email": request.form.get("email").lower(),
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+        }
+        mongo.db.users.insert_one(register)
+
+        session["user"] =request.form.get("username").lower()
+        flash("Registration Successful!")
+        return redirect(url_for("profile", username=session["user"]))
+
+    if 
+    return render_template("register.html")
+
+-------
+    @app.route("/profile/<username>", methods=["GET", "POST"])
+      def profile(username):
+          username = mongo.db.users.find_one(
+              {"username": session["user"]})
+          poster = mongo.db.series.find_one({})
+      
+          if session["user"]:
+              return render_template("profile.html", username=username, poster=poster)
+      
+          return redirect(url_for("login"))
+
+
+          {% if username.username | lower == poster.posted_by | lower %}
+      
+-----
+
+poster = mongo.db.series.find_one(
+            {"posted_by": session["user"])
+
+            -----
+            @app.route("/cards")
+def cards():
+    cards = mongo.db.series.find({})
+    return render_template("cards.html", cards=cards)
+
+    -----
+    
+
+    <!-- {% if username | lower == poster.posted_by | lower %} -->
+
+    cards.posted_by | lower == session["user"]| lower

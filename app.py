@@ -98,6 +98,7 @@ def post_delete():
             "synopsis": request.form.get("synopsis"),
             "title": request.form.get("title"),
             "year": request.form.get("year"),
+            "posted_by": session["user"],
         }
         mongo.db.series.insert_one(selection)       
         flash("Post Successful!")
@@ -121,9 +122,11 @@ def contact():
 def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})
+    cards = mongo.db.series.find(
+        {"posted_by": session["user"]})
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, cards=cards)
 
     return redirect(url_for("login"))
 
