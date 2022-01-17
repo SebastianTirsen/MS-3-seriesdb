@@ -115,7 +115,24 @@ def cards():
 
 @app.route("/update_show/<show_id>", methods=["GET", "POST"])
 def update_show(show_id):
-    show = mongo.db.series.find_one({"_id": ObjectId(show_id)})
+    if request.method == "POST":
+        resend = {
+            "country": request.form.get("country"),
+            "director": request.form.get("director"),
+            "genre": request.form.get("genre"),
+            "parental_guidance": request.form.get("parental_guidance"),
+            "picture": request.form.get("picture"),
+            "seasons": request.form.get("seasons"),
+            "starring": request.form.get("starring"),
+            "synopsis": request.form.get("synopsis"),
+            "title": request.form.get("title"),
+            "year": request.form.get("year"),
+            "posted_by": session["user"],
+        }
+        mongo.db.series.update_one({"_id": ObjectId(show_id)}, {"$set": resend})     
+        flash("Update Successful!")
+
+    show = mongo.db.series.find_one({"_id": ObjectId(show_id)}) 
     return render_template("update_show.html", show=show)
 
 
