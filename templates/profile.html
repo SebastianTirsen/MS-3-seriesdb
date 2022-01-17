@@ -56,53 +56,10 @@
           <p class="movie__detail"><span class="icons icons-grey"><i
                 class="fas fa-hourglass-half"></i></span>&nbsp;{{card.seasons}} seasons</p>
         </div>
-        <!-- Modal button -->
-        <button class="btn btn-lg btn-primary" type="button" id="">
-          Update
-        </button>
-        <button class="btn btn-lg btn-primary" type="button" id=""">
-          Delete
-        </button>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal-{{card._id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="ModalLabel">Rate This Show!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <form role="form" method="POST" action="{{ url_for('ratings')}}">
-                  <div class="rating_box">
-                    <label for="" class="col-form-label">Your Rating:</label>
-                    <div class="rate">
-                      <input type="radio" id="star5-{{card._id}}" name="rating" value="5" />
-                      <label for="star5-{{card._id}}" title="text">5 stars</label>
-                      <input type="radio" id="star4-{{card._id}}" name="rating" value="4" />
-                      <label for="star4-{{card._id}}" title="text">4 stars</label>
-                      <input type="radio" id="star3-{{card._id}}" name="rating" value="3" />
-                      <label for="star3-{{card._id}}" title="text">3 stars</label>
-                      <input type="radio" id="star2-{{card._id}}" name="rating" value="2" />
-                      <label for="star2-{{card._id}}" title="text">2 stars</label>
-                      <input type="radio" id="star1-{{card._id}}" name="rating" value="1" />
-                      <label for="star1-{{card._id}}" title="text">1 star</label>
-                    </div>
-                    <input type="hidden" id="show" name="show" value="{{ card.title }}">
-                  </div>
-                  <div class="mb-3">
-                    <label for="message-text" class="col-form-label">Your Review:</label>
-                    <textarea class="form-control" name="review" id="message-text"></textarea>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save Rating</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Update & delete button -->
+          <a id="rate-button" class="btn btn-lg btn-primary updel_btn" href="{{ url_for('update_show', show_id=card._id) }}">Update</a>
+          <a id="rate-button" class="btn btn-lg btn-primary updel_btn" href="">Delete</a>
+
       </div>
       <!-- Card right side-writer,starring.story -->
       <div class="movie__content">

@@ -411,3 +411,9 @@ margin: 26px;
     padding-top: 86px;
     padding-bottom: 20px;
 }
+
+.updel_btn {
+    color: white;
+    text-decoration: none;
+    font-size: 1.25rem;
+}

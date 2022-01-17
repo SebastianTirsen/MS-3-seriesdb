@@ -226,3 +226,30 @@ def cards():
           update = mongo.db.series.find_one({"_id": ObjectId(show_id)})
           cards = mongo.db.series.find({})
           return render_template("post_delete.html", cards=cards, update=update)
+
+
+
+  ----------
+  <!-- Search-field -->
+  <div id="search" class="row">
+    <div class="mx-auto">
+      <div class="input-group">
+        <input class="form-control border-end-0 border" type="search" placeholder="Search" id="example-search-input">
+        <span class="input-group-append">
+          <button class="btn btn-outline-secondary bg-white border-start-0 border ms-n5" type="button">
+            <i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <!-- Sort-buttons -->
+  <div id="sort_buttons">
+    <button id="sort_btn" class="btn btn-lg btn-primary" type="button">Filter <i class="fas fa-filter"></i></button>
+    <button id="sort_btn" class="btn btn-lg btn-primary" type="button">Sort by Rank <i
+        class="fas fa-medal"></i></button>
+    <button id="sort_btn" class="btn btn-lg btn-primary" type="button">Sort by Rating <i
+        class="far fa-star"></i></button>
+    <button id="sort_btn" class="btn btn-lg btn-primary" type="button">Sort A-Z <i
+        class="fas fa-arrows-alt-v"></i></button>
+  </div>
