@@ -43,7 +43,7 @@
 							{% if session.user %}
 							<li><a class="dropdown-item" href="{{ url_for('profile', username=session['user']) }}">Your Profile</a></li>
 							<li><a class="dropdown-item" href="{{ url_for('cards') }}">All Shows</a></li>
-							<li><a class="dropdown-item" href="{{ url_for('post_delete') }}">New Show</a></li>
+							<li><a class="dropdown-item" href="{{ url_for('post_show') }}">New Show</a></li>
 							<li><a class="dropdown-item" href="{{ url_for('logout') }}">Log Out</a></li>
 							{% else %}
 							<li><a class="dropdown-item" href="{{ url_for('login') }}">Log In</a></li>

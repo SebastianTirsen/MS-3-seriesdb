@@ -80,8 +80,8 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/post_delete", methods=["GET", "POST"])
-def post_delete():
+@app.route("/post_show", methods=["GET", "POST"])
+def post_show():
     if request.method == "POST":
         # Bara för att se vad som skickas till dbn - visas i konsolfönstret. Ej nödvändig.
         req = request.form # Sparar allt från seriestabellen
@@ -104,7 +104,7 @@ def post_delete():
         flash("Post Successful!")
         return redirect(request.url)
     
-    return render_template("post_delete.html")
+    return render_template("post_show.html")
 
 
 @app.route("/cards")
