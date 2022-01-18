@@ -25,5 +25,9 @@
    "terminal.integrated.gpuAcceleration": "canvas",
    "editor.defaultFormatter": "HookyQR.beautify",
    "python.linting.banditEnabled": false,
-   "editor.columnSelection": true
+   "editor.columnSelection": true,
+   "[python]": {
+      "editor.defaultFormatter": "ms-python.python"
+   },
+   "python.formatting.provider": "black"
 }

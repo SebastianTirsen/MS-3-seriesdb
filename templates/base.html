@@ -30,16 +30,16 @@
 	      </button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
+					<li class="nav-item" id="home-btn">
 						<a class="nav-link" href="{{ url_for('index') }}">Home</a>
 					</li>
                 
 					
-					<li class="nav-item dropdown">
+					<li class="nav-item dropdown" id="menu-btn">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						  Menu
 						</a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<ul class="dropdown-menu" id="drop-menu" aria-labelledby="navbarDropdown">
 							{% if session.user %}
 							<li><a class="dropdown-item" href="{{ url_for('profile', username=session['user']) }}">Your Profile</a></li>
 							<li><a class="dropdown-item" href="{{ url_for('cards') }}">All Shows</a></li>
@@ -94,22 +94,22 @@
   
 	  <!-- Right -->
 	  <div>
-		<a href="" class="me-4 text-reset text-decoration-none">
+		<a href="https://www.facebook.com/" target="_blank" class="me-4 text-reset text-decoration-none">
 		  <i class="fab fa-facebook-f"></i>
 		</a>
-		<a href="" class="me-4 text-reset text-decoration-none">
+		<a href="https://twitter.com/" target="_blank" class="me-4 text-reset text-decoration-none">
 		  <i class="fab fa-twitter"></i>
 		</a>
-		<a href="" class="me-4 text-reset text-decoration-none">
+		<a href="https://www.google.com/" target="_blank" class="me-4 text-reset text-decoration-none">
 		  <i class="fab fa-google"></i>
 		</a>
-		<a href="" class="me-4 text-reset text-decoration-none">
+		<a href="https://www.instagram.com/" target="_blank" class="me-4 text-reset text-decoration-none">
 		  <i class="fab fa-instagram"></i>
 		</a>
-		<a href="" class="me-4 text-reset text-decoration-none">
+		<a href="https://www.linkedin.com/" target="_blank" class="me-4 text-reset text-decoration-none">
 		  <i class="fab fa-linkedin"></i>
 		</a>
-		<a href="" class="me-4 text-reset text-decoration-none">
+		<a href="https://github.com/" target="_blank" class="me-4 text-reset text-decoration-none">
 		  <i class="fab fa-github"></i>
 		</a>
 	  </div>
@@ -129,32 +129,9 @@
 			  International Series Database
 			</h6>
 			<p>
-			  Yoyr premier source of inspiration when you pick a new TV-show to watch.
+			  Your premier source of inspiration when picking a new TV-show to watch.
 			</p>
-		  </div>
-		  <!-- Grid column -->
-  
-		  <!-- Grid column -->
-		  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-			<!-- Links -->
-			<h6 class="text-uppercase fw-bold mb-4">
-			  Products
-			</h6>
-			<p>
-			  <a href="#!" class="text-reset">Angular</a>
-			</p>
-			<p>
-			  <a href="#!" class="text-reset">React</a>
-			</p>
-			<p>
-			  <a href="#!" class="text-reset">Vue</a>
-			</p>
-			<p>
-			  <a href="#!" class="text-reset">Laravel</a>
-			</p>
-		  </div>
-		  <!-- Grid column -->
-  
+		  </div>  
 		  <!-- Grid column -->
 		  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 			<!-- Links -->
@@ -162,16 +139,16 @@
 			  Useful links
 			</h6>
 			<p>
-			  <a href="#!" class="text-reset">Netflix</a>
+			  <a href="https://www.netflix.com/se-en/" target="_blank" class="text-reset">Netflix</a>
 			</p>
 			<p>
-			  <a href="#!" class="text-reset">Amazon Prime</a>
+			  <a href="https://www.amazon.com/amazonprime?_encoding=UTF8&sr=53-1" target="_blank" class="text-reset">Amazon Prime</a>
 			</p>
 			<p>
-			  <a href="#!" class="text-reset">HBO Max</a>
+			  <a href="https://www.hbomax.com/" target="_blank" class="text-reset">HBO Max</a>
 			</p>
 			<p>
-			  <a href="#!" class="text-reset">Apple TV+</a>
+			  <a href="https://tv.apple.com/" target="_blank" class="text-reset">Apple TV+</a>
 			</p>
 		  </div>
 		  <!-- Grid column -->

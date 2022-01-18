@@ -85,8 +85,8 @@ def post_show():
     if request.method == "POST":
         # Bara för att se vad som skickas till dbn - visas i konsolfönstret. Ej nödvändig.
         req = request.form # Sparar allt från seriestabellen
-        print(req) # Printar i konsolen    
-        
+        print(req) # Printar i konsolen
+
         selection = {
             "country": request.form.get("country"),
             "director": request.form.get("director"),
@@ -103,14 +103,15 @@ def post_show():
         mongo.db.series.insert_one(selection)       
         flash("Post Successful!")
         return redirect(request.url)
-    
+
     return render_template("post_show.html")
 
 
 @app.route("/cards")
 def cards():
     cards = mongo.db.series.find({})
-    return render_template("cards.html", cards=cards)
+    reviews = list(mongo.db.ratings.find({}))
+    return render_template("cards.html", cards=cards, reviews=reviews)
 
 
 @app.route("/update_show/<show_id>", methods=["GET", "POST"])
@@ -139,7 +140,7 @@ def update_show(show_id):
 @app.route("/delete_show/<show_id>")
 def delete_show(show_id):
     mongo.db.series.delete_one({"_id": ObjectId(show_id)})
-    flash("Task Successfully Deleted!")
+    flash("Show Successfully Deleted!")
     return redirect(url_for("profile", username=session["user"]))
 
 

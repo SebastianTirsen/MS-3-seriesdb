@@ -119,9 +119,10 @@
                     <div class="review">
                       <div class="name-star">
                         <p class="user">{{ review.created_by }}</p>&nbsp;
-                        <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-star"></i><i
-                              class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                          </span>4</p>
+                        <p class="movie__detail"><span class="icons icons-yellow">
+                          {% for n in range(review.rating | int) %}
+                          <i class="fas fa-star"></i>
+                          {% endfor %}
                       </div>
                       <p>{{ review.review }}</p>
                     </div>
