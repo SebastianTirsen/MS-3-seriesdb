@@ -253,3 +253,27 @@ def cards():
     <button id="sort_btn" class="btn btn-lg btn-primary" type="button">Sort A-Z <i
         class="fas fa-arrows-alt-v"></i></button>
   </div>
+
+  --------------
+
+  @app.route("/update_show/<show_id>", methods=["GET", "POST"])
+    def update_show(show_id):
+        update = mongo.db.series.find_one({"_id": ObjectId(show_id)})
+        cards = mongo.db.series.find({})
+        return render_template("update_show.html", cards=cards, update=update)
+
+        _____________
+
+        mongo.db.events.update_one(
+           {"_id": ObjectId(event_id)}, {"$set": submit})
+
+           ----------------
+           var savebutton = document.getElementById('savebutton');
+var readonly = true;
+var inputs = document.querySelectorAll('input[type="text"]');
+savebutton.addEventListener('click',function(){
+
+for (var i=0; i<inputs.length; i++) { inputs[i].toggleAttribute('readonly'); }; if (savebutton.innerHTML=="edit" ) { savebutton.innerHTML="save" ; } else { savebutton.innerHTML="edit" ; } });
+
+-------------------
+<button class="btn btn-primary" id="savebutton">edit</button> 
