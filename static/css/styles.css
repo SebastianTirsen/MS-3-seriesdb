@@ -114,9 +114,9 @@
         outline: none
     }
     
-    .profile_card .inputs input[type="text"][readonly] {
+ /*    .profile_card .inputs input[type="text"][readonly] {
         border: 2px solid rgba(0, 0, 0, 0)
-    }
+    } */
 
 * {
     margin: 0;
@@ -206,16 +206,16 @@ margin: 26px;
 .movie__tag {
     font-size: 11px;
     color: #fff;
-  padding: 2px 7px;
-  border-radius: 100px;
-  margin-right: 8px;
-  display: block;
-  text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 100px;
+    margin-right: 8px;
+    display: block;
+    text-transform: uppercase;
 
 }
 
 .movie__tag--1 {
-  background-color: #A9C9FF;
+  background-color:orange;
 }
 
 .movie__tag--2 {
@@ -416,4 +416,14 @@ margin: 26px;
     color: white;
     text-decoration: none;
     font-size: 1.25rem;
+}
+
+.update_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marg_10 {
+    margin: 10px;
 }
