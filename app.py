@@ -136,6 +136,13 @@ def update_show(show_id):
     return render_template("update_show.html", show=show)
 
 
+@app.route("/delete_show/<show_id>")
+def delete_show(show_id):
+    mongo.db.series.delete_one({"_id": ObjectId(show_id)})
+    flash("Task Successfully Deleted!")
+    return redirect(url_for("profile", username=session["user"]))
+
+
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     return render_template("contact.html")
