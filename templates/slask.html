@@ -276,4 +276,25 @@ savebutton.addEventListener('click',function(){
 for (var i=0; i<inputs.length; i++) { inputs[i].toggleAttribute('readonly'); }; if (savebutton.innerHTML=="edit" ) { savebutton.innerHTML="save" ; } else { savebutton.innerHTML="edit" ; } });
 
 -------------------
-<button class="btn btn-primary" id="savebutton">edit</button> 
+<button class="btn btn-primary" id="savebutton">edit</button>
+
+-------------------
+
+<!-- Modal -->
+<div class="modal fade" id=""delete-modal-{{card._id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Do you really want to delete Show, {{card.title}}?</p>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</a>
+        <a href="{{ url_for('delete_show', show_id=card._id) }}" type="button" class="btn btn-primary">Delete Show</a>
+      </div>
+    </div>
+  </div>
+</div>
