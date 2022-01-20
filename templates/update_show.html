@@ -17,7 +17,7 @@
 
   <h1>Update Show</h1>
 </div>
-<div id="shows_container">
+<div id="shows-container">
   <form role="form" method="POST" action="{{ url_for('update_show', show_id=show._id)}}">
     <!-- column grid layout with dropdowns and text inputs -->
     <div class="row mb-4">
@@ -186,10 +186,10 @@
 
     </div>
       <!-- Cancel button -->
-    <div class="update_buttons">
-      <a type="submit" href="{{ url_for('profile', username=session['user']) }}" id="" class="marg_10 btn btn-lg btn-primary mb-4">Cancel</a>
+    <div class="update-buttons">
+      <a type="submit" href="{{ url_for('profile', username=session['user']) }}" id="" class="marg-10 btn btn-lg btn-primary mb-4">Cancel</a>
       <!-- Submit button -->
-      <button type="submit" id="" class="marg_10 btn btn-lg btn-primary mb-4">Update</button>
+      <button type="submit" id="" class="marg-10 btn btn-lg btn-primary mb-4">Update</button>
     </div>
   </form>
 </div>

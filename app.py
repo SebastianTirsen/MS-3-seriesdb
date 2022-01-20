@@ -38,11 +38,11 @@ def login():
         if existing_user:
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}!".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}!".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -52,7 +52,6 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
-
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -73,7 +72,7 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        session["user"] =request.form.get("username").lower()
+        session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
 
@@ -83,9 +82,8 @@ def register():
 @app.route("/post_show", methods=["GET", "POST"])
 def post_show():
     if request.method == "POST":
-        # Bara för att se vad som skickas till dbn - visas i konsolfönstret. Ej nödvändig.
-        req = request.form # Sparar allt från seriestabellen
-        print(req) # Printar i konsolen
+        req = request.form
+        print(req)
 
         selection = {
             "country": request.form.get("country"),
@@ -100,7 +98,7 @@ def post_show():
             "year": request.form.get("year"),
             "posted_by": session["user"],
         }
-        mongo.db.series.insert_one(selection)       
+        mongo.db.series.insert_one(selection)
         flash("Post Successful!")
         return redirect(request.url)
 
@@ -130,10 +128,11 @@ def update_show(show_id):
             "year": request.form.get("year"),
             "posted_by": session["user"],
         }
-        mongo.db.series.update_one({"_id": ObjectId(show_id)}, {"$set": resend})     
+        mongo.db.series.update_one(
+            {"_id": ObjectId(show_id)}, {"$set": resend})
         flash("Update Successful!")
 
-    show = mongo.db.series.find_one({"_id": ObjectId(show_id)}) 
+    show = mongo.db.series.find_one({"_id": ObjectId(show_id)})
     return render_template("update_show.html", show=show)
 
 
@@ -150,29 +149,15 @@ def contact():
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
-# above "/profile/" is the app route "<username>" is an argument, named username as we expect the users username to be passed into the route
-    # now the profile function takes the username argument, passed into the profile route function
-def profile(username): # <<<< here
-
-    # below is a query to the database to find one user where "username" matches session["user"]
+def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})
 
-    # HERE is where the data on the cards objects begins
-    # the query is made to the database to find any series objects where "posted_by" matches session["user"]
     cards = mongo.db.series.find(
         {"posted_by": session["user"]})
 
     if session["user"]:
-        # in the render_template() method, we pass data from this function into the template
-        # we defined that data
-        # username=username takes the data returned on line 133 and defines it as 'username'
-        # we can now access 'username' on the template
 
-        # the same for cards=cards, this is defining 'cards' and assigning it the value of whats returned
-        # from the database query on line 138
-        # on the template, 'cards' will be equal to 'cards' as defined on line 138
-        # this is what's called passing the data to the template as context
         return render_template("profile.html", username=username, cards=cards)
 
     return redirect(url_for("login"))
@@ -188,17 +173,17 @@ def logout():
 @app.route("/ratings", methods=["GET", "POST"])
 def ratings():
     if request.method == "POST":
-        # Bara för att se vad som skickas till dbn - visas i konsolfönstret. Ej nödvändig.
-        req = request.form # Sparar allt från tabellen
-        print(req) # Printar i konsolen    
-        
+
+        req = request.form
+        print(req)   
+
         grades = {
             "rating": request.form.get("rating"),
             "review": request.form.get("review"),
             "created_by": session["user"],
             "show": request.form.get("show"),
         }
-        mongo.db.ratings.insert_one(grades)       
+        mongo.db.ratings.insert_one(grades)
         flash("Rating Successful!")
         return redirect(request.url)
     cards = list(mongo.db.series.find({}))

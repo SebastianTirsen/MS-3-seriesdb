@@ -17,7 +17,7 @@
 
   <h1>Post New Show</h1>
 </div>
-<div id="shows_container">
+<div id="shows-container">
   <form role="form" method="POST" action="{{ url_for('post_show')}}">
     <!-- column grid layout with dropdowns and text inputs -->
     <div class="row mb-4">
@@ -153,25 +153,25 @@
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form6Example3">Title of Show</label>
-        <input type="text" name="title" id="form6Example3" class="form-control" />
+        <input type="text" name="title" id="form6Example3" class="form-control" required/>
       </div>
 
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form6Example4">Director</label>
-        <input type="text" name="director" id="form6Example4" class="form-control" />
+        <input type="text" name="director" id="form6Example4" class="form-control" required/>
       </div>
 
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form6Example4">Starring</label>
-        <input type="text" name="starring" id="form6Example4" class="form-control" />
+        <input type="text" name="starring" id="form6Example4" class="form-control" required/>
       </div>
 
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form6Example4">Picture Link &nbsp;<sub>(Paste picture link here)</sub></label>
-        <input type="text" name="picture" id="form6Example4" class="form-control" />
+        <input type="text" name="picture" id="form6Example4" class="form-control" required/>
       </div>
 
       <!-- Message input -->
@@ -183,7 +183,7 @@
     </div>
 
       <!-- Submit button -->
-      <button type="submit" id="submit_btn" class="btn btn-lg btn-primary mb-4">Post show</button>
+      <button type="submit" id="submit-btn" class="btn btn-lg btn-primary mb-4">Post show</button>
   </form>
 </div>
 
