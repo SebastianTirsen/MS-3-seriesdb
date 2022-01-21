@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container-fluid vh-100" style="margin-top:100px">
-
+<div class="container-fluid vh-100">
     <section>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
@@ -14,10 +13,12 @@
             {% endif %}
         {% endwith %}
     </section>
-
-    <div class="" style="margin-top:200px">
+    <div class="container">
+        <div class="register-heading">
+            <h1>Log In to your Account</h1>
+        </div>
         <div class="rounded d-flex justify-content-center">
-            <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
+            <div class="col-md-6 col-sm-12 shadow-lg p-5 bg-light" id="login-field">
                 <div class="text-center">
                     <h3 class="text-primary">Log in to your Account</h3>
                 </div>

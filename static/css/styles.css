@@ -459,8 +459,6 @@ margin: 26px;
       margin-bottom: 70px;
   }
 
-
-/* Rating-stars */
 .rate {
     float: left;
     height: 46px;
@@ -540,3 +538,38 @@ margin: 26px;
         -ms-flex-pack: justify;
             justify-content: space-between;
 }
+
+#drop-menu {
+    min-width: 6rem;
+  }
+  
+  /*----------------------------------Media queries-------------------------------*/
+@media only screen and (max-width:991px) {
+    #section-center {
+        display; flex;
+        justify-content: center;
+    }
+}
+ 
+@media only screen and (max-width:768px) {
+    .rate-button {
+        margin-top: 10px;
+    }
+    .movie {
+        display: block;
+    }
+    .movie-content {
+        margin: 10px
+    }
+    #post-block {
+        display: block;
+    }
+    .show-container {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+
+
+

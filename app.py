@@ -156,9 +156,11 @@ def profile(username):
     cards = mongo.db.series.find(
         {"posted_by": session["user"]})
 
+    reviews = list(mongo.db.ratings.find({}))
+
     if session["user"]:
 
-        return render_template("profile.html", username=username, cards=cards)
+        return render_template("profile.html", username=username, cards=cards, reviews=reviews)
 
     return redirect(url_for("login"))
 
