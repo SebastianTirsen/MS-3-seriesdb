@@ -12,34 +12,34 @@
 {% if not session.user %}
   <div class="button-center">
     <div class="cta-button">
-      <a role="button" class="btn btn-primary btn-lg text-decoration-none" href="{{ url_for('register') }}">Register</a>
-      <a role="button" class="btn btn-primary btn-lg text-decoration-none" href="{{ url_for('login') }}">Log In</a>
+      <a role="button" id="register-text" class="btn btn-primary btn-lg text-decoration-none" href="{{ url_for('register') }}">Register</a>
+      <a role="button" id="login-text" class="btn btn-primary btn-lg text-decoration-none button-text" href="{{ url_for('login') }}">Log In</a>
     </div>
   </div>
 {% endif %}
 <hr>
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExample-1" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExample-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExample-1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExample-1" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active data-bs-interval="1000">
+    <div class="carousel-item active" data-bs-interval="1000">
       <img src="{{ url_for('static', filename='img/sexcity.jpeg') }}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>#3 Sex and the city !</h5>
         <p>Viewer rated "Sex and the city" as the #3 show.</p>
       </div>
     </div>
-    <div class="carousel-item data-bs-interval="1000">
+    <div class="carousel-item" data-bs-interval="1000">
       <img src="{{ url_for('static', filename='img/Game-of-Thrones-Ending.jpeg') }}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>#1 Game Of Thrones!</h5>
         <p>Viewer rated "Game Of Thrones" as the #1 show.</p>
       </div>
     </div>
-    <div class="carousel-item data-bs-interval="1000">
+    <div class="carousel-item" data-bs-interval="1000">
       <img src="{{ url_for('static', filename='img/dexter.jpeg') }}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>#2 Dexter!</h5>
@@ -47,39 +47,39 @@
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample-1" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample-1" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>
 <hr>
 
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExample-2" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExample-2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExample-2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExample-2" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active data-bs-interval="1000">
+    <div class="carousel-item active" data-bs-interval="1000">
       <img src="{{ url_for('static', filename='img/wire.jpeg') }}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>The Wire</h5>
         <p>An all time favourite cop show.</p>
       </div>
     </div>
-    <div class="carousel-item data-bs-interval="1000">
+    <div class="carousel-item" data-bs-interval="1000">
       <img src="{{ url_for('static', filename='img/Breaking.jpeg') }}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Breaking Bad</h5>
         <p>Partners in crime.</p>
       </div>
     </div>
-    <div class="carousel-item data-bs-interval="1000">
+    <div class="carousel-item" data-bs-interval="1000">
       <img src="{{ url_for('static', filename='img/Bandof.jpeg') }}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Band of Brothers</h5>
@@ -87,11 +87,11 @@
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample-2" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample-2" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>

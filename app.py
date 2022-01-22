@@ -37,7 +37,8 @@ def login():
 
         if existing_user:
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                                existing_user["password"],
+                                request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}!".format(
                     request.form.get("username")))
@@ -160,7 +161,10 @@ def profile(username):
 
     if session["user"]:
 
-        return render_template("profile.html", username=username, cards=cards, reviews=reviews)
+        return render_template(
+            "profile.html",
+            username=username,
+            cards=cards, reviews=reviews)
 
     return redirect(url_for("login"))
 
@@ -177,7 +181,6 @@ def ratings():
     if request.method == "POST":
 
         req = request.form
-        print(req)   
 
         grades = {
             "rating": request.form.get("rating"),

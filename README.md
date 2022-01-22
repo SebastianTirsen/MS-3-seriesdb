@@ -23,10 +23,9 @@ and review of an existing one. View the live Website [here](https://ms3-seriesdb
             * [Colour Scheme](#Colour-Scheme)
             * [Typography](#Typography)
             * [Imagery](#Imagery)
-    * [Differences to Design](#Differences-to-Design)
 - [Features](#Features)
     * [Existing Features](#Existing-Features)
-    * [Future Features](#Features-Left-to-Implement)
+    * [Features to be added](#Features-Left-to-add)
 * [Technologies](#Technologies)
 * [Testing](#Testing)
     * [Test Strategy](#Test-Strategy)
@@ -216,11 +215,9 @@ Acceptance Criteria:
 
 Implementation:
 
-A contact page will be added that contains a Boostrap template form, this will allow users to contact the site 
-owner. 
-
-<!-- The EmailJS API will be used in order to implement this feature and a flash message will be  -->
-<!-- displayed to alert the user if the contact form submitted successfully or unsuccessfully. -->
+A contact page will be added that contains a Bootstrap template form, this will allow users to contact the site 
+owner. The information is stored in the MongoDb Collection called contact. A flash message is displayed to alert 
+the user that the contact form submitted successfully.
 
 Validation will be performed on the form to ensure valid data input. The form will not submit if any 
 field is blank.
@@ -362,7 +359,11 @@ Other Images can vary depending on what pictures are stored on the show cards in
 
 ### Features to be added
 
-A feature to be included in a new release would be a searchfield. This would give the users a faster way to find a show in the Db especially when the amount of shows grow. 
+A feature to be included in a new release would be a searchfield. This would give the users a faster way to find a show in the Db especially when the amount of shows grow.
+
+Filter and sort buttons would also make it easier for the user to navigate between different shows based on preference.
+
+Each show having its own rank based on the average rating of the users, would be a great feature. Teh the user would have the possibility to filter all the shows based on any of the bits of information, for example "genre", and then sort them by ranking, finding the highest rated show in that genre. 
 
 ****
 ## Technologies
@@ -434,14 +435,15 @@ CSS Code passed through the [W3C CSS Validator](https://jigsaw.w3.org/css-valida
 
 JavaScript code passed through the [JSHint Validator](https://jshint.com/).
 
-Python Code passed through [PEP8 Validator](http://pep8online.com/) Reduced to one fault
-i did not understand on line 40: "continuation line with same indent as next logical 
+Python Code passed through [PEP8 Validator](http://pep8online.com/) Mostly indentation errors, 
+I reduced to one fault I did not understand on line 40: "continuation line with same indent as next logical 
 line".
 
-
 #### **Access Requirements**
-Tester must have access to MongoDB in order to manually verify the insertion 
-of records to users and events collections.
+For testing the site, just register a new user and then login.
+
+In order to manually verify the insertion of records to the 
+collections, the tester must have access to MongoDB.
 
 #### **Regression Testing**
 All features previous tested during development in a local environment must be regression 
@@ -466,6 +468,8 @@ I was then directed to the create new repository from template page and entered 
 clicked Create repository from template button.
 
 Once created, I navigated to my new repository on GitHub and clicked the Gitpod button which built my workspace.
+
+I then created a Python virtual environment to work with this project separately with its own dependencies.
 
 The following commands were used for version control throughout the project:
 
@@ -535,6 +539,11 @@ for your own idea. - Definition from [Github Docs](https://docs.github.com/en/fr
 1. This will create a duplicate of the full project in your GitHub Repository.
 
 ****
+
+## Credits
+
+### **Content**
+
 ## Graphic & Design Credits
 
 Hero image - Taken from [The New Daily](https://1v1d1e1lmiki1lgcvx32p49h8fe-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/ned-stark-game-of-thrones-740x385.jpg)
@@ -577,7 +586,7 @@ https://codepen.io/hesguru/pen/BaybqXv
 
 JavaScript Validation function in scripts.js was code from course material for Task Manager App on the LMS. 
 
-### Acknowledgements
+### **Acknowledgements**
 
 I'd like to express my deepest grattitude to the the following people for their help with my project:
 

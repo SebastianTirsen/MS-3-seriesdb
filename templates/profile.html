@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section>
+<div>
     <!-- flash messages -->
     {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -12,9 +12,9 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-</section>
+</div>
 
-<div id="profile-heading" class="col-lg-8 col-md-10 mx-auto">
+<div id="profile-head" class="col-lg-8 col-md-10 mx-auto">
     <h1>Your Profile</h1>
 </div>
 <div class="profile-container">
@@ -51,29 +51,29 @@
           <div class="movie--tag movie-tag-1">{{card.genre}}</div>
         </div>
         <div class="movie-details">
-          <p class="movie-detail"><span></span><i class="fas fa-globe"></i></span>&nbsp;{{card.country}}</p>
+          <p class="movie-detail"><span><i class="fas fa-globe"></i></span>&nbsp;{{card.country}}</p>
           <p class="movie-detail"><span><i class="fas fa-child"></i></span>&nbsp;{{card.parental_guidance}}</p>
           <p class="movie-detail"><span class="icons icons-grey"><i
                 class="fas fa-hourglass-half"></i></span>&nbsp;{{card.seasons}} seasons</p>
         </div>
         <!-- Update & delete button -->
-          <a id="" class="btn btn-lg btn-primary updel-btn rate-button" href="{{ url_for('update_show', show_id=card._id) }}">Update</a>
-          <a id="" data-bs-toggle="modal" data-bs-target="#delete-modal-{{card._id}}" class="btn btn-lg btn-primary updel-btn rate-button" href="#delete-modal-{{card._id}}">Delete</a>
+          <a class="btn btn-lg btn-primary updel-btn rate-button" href="{{ url_for('update_show', show_id=card._id) }}">Update</a>
+          <a data-bs-toggle="modal" data-bs-target="#delete-modal-{{card._id}}" class="btn btn-lg btn-primary updel-btn rate-button" href="#delete-modal-{{card._id}}">Delete</a>
       </div>
       <!-- Delete-modal -->
-      <div class="modal fade" id="delete-modal-{{card._id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="delete-modal-{{card._id}}" tabindex="-1" aria-labelledby="modalDelete" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+              <h5 class="modal-title" id="modalDelete">Warning</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <p>Do you really want to delete Show:&nbsp;{{card.title}}?</p>
             </div>
             <div class="modal-footer">
-              <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</a>
-              <a href="{{ url_for('delete_show', show_id=card._id) }}" type="button" class="btn btn-primary">Delete Show</a>
+              <a class="btn btn-secondary" data-bs-dismiss="modal">Close</a>
+              <a href="{{ url_for('delete_show', show_id=card._id) }}" class="btn btn-primary">Delete Show</a>
             </div>
           </div>
         </div>
@@ -87,17 +87,17 @@
         <hr>
         <!-- Accordion -->
         <div class="card-buttons">
-          <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion accordion-flush" id="accordionReviews">
             <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingOne">
+              <h2 class="accordion-header" id="flushReviews">
                 <button class="accordion-button collapsed" type="button" id="accordion-button-text-{{card._id}}"
                   data-bs-toggle="collapse" data-bs-target="#flush-collapseOne-{{card._id}}" aria-expanded="false"
-                  aria-controls="flush-collapseOne">
+                  aria-controls="flushReviews">
                   Reviews
                 </button>
               </h2>
               <div id="flush-collapseOne-{{card._id}}" class="accordion-collapse collapse"
-                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                aria-labelledby="flushReviews" data-bs-parent="#accordionReviews">
                 <div class="accordion-body">
                   <div class="reviews">
                     <h5>User Reviews</h5>
@@ -106,10 +106,12 @@
                     <div class="review">
                       <div class="name-star">
                         <p class="user">{{ review.created_by }}</p>&nbsp;
-                        <p class="movie-detail"><span class="icons icons-yellow">
+                        <p class="movie-detail">
+                          <span class="icons icons-yellow"></span>
                           {% for n in range(review.rating | int) %}
                           <i class="fas fa-star"></i>
                           {% endfor %}
+                        </p>
                       </div>
                       <p>{{ review.review }}</p>
                     </div>
