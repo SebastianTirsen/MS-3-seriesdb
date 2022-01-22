@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container-fluid vh-100">
-
     <div>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
@@ -14,6 +13,7 @@
             {% endif %}
         {% endwith %}
     </div>
+    <!-- Register form -->
     <div class="register-heading">
         <h1>Register Your New Account</h1>
     </div>
@@ -30,7 +30,6 @@
                                     class="bi bi-person-plus-fill text-white"></i></span>
                             <input id="name" name="name" type="text" minlength="2" maxlength="25" class="form-control validate" pattern="^[a-zA-Z]{2,25}$" placeholder="Your Name" required>
                         </div>
-
                         <div class="input-group mb-3">
                             <span class="input-group-text bg-primary"><i class="bi bi-envelope text-white"></i></span>
                             <input id="email" name="email" type="email" class="form-control validate" placeholder="Email" required>
@@ -42,7 +41,6 @@
                                 pattern="^[a-zA-Z0-9]{3,16}$" class="form-control validate" required
                                 placeholder="Username">
                         </div>
-
                         <div class="input-group mb-3">
                             <span class="input-group-text bg-primary"><i class="bi bi-key-fill text-white"></i></span>
                             <input id="password" name="password" type="password" minlength="3" maxlength="16"

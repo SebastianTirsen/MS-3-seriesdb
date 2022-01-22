@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="post-heading" class="col-lg-8 col-md-10 mx-auto">
-
   <section>
     <!-- flash messages -->
     {% with messages = get_flashed_messages() %}
@@ -14,14 +13,12 @@
         {% endif %}
     {% endwith %}
 </section>
-
   <h1>Update Show</h1>
 </div>
 <div id="shows-container">
   <form role="form" method="POST" action="{{ url_for('update_show', show_id=show._id)}}">
     <!-- column grid layout with dropdowns and text inputs -->
     <div class="row mb-4">
-
       <div class="col mb-4">
         <div class="form-outline">
           <label class="Visually-hidden" for="inlineFormSelectPref"></label>
@@ -153,37 +150,31 @@
           </select>
         </div>
       </div>
-
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form6Example3">Title of Show</label>
         <input type="text" name="title" id="form6Example3" class="form-control" value="{{ show.title }}" />
       </div>
-
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form6Example4">Director</label>
         <input type="text" name="director" id="form6Example4" class="form-control" value="{{ show.director }}"/>
       </div>
-
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form6Example4">Starring</label>
         <input type="text" name="starring" id="form6Example4" class="form-control" value="{{ show.starring }}"/>
       </div>
-
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form6Example4">Picture Link &nbsp;<sub>(Paste picture link here)</sub></label>
         <input type="text" name="picture" id="form6Example4" class="form-control" value="{{ show.picture }}"/>
       </div>
-
       <!-- Message input -->
       <div class="form-outline mb-4">
         <label class="form-label" for="form6Example7">Synopsis:</label>
         <textarea class="form-control" name="synopsis" id="form6Example7" rows="4">{{- show.synopsis -}}</textarea>
       </div>
-
     </div>
       <!-- Cancel button -->
     <div class="update-buttons">

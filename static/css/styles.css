@@ -7,9 +7,31 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    background-color: #FBFAF0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #444;
+    height: 100vh;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    width: 80%;
+}
+
 #logo {
     font-size: 1.75rem;
 }
+
+/* Index page */
 
 .cta-button { 
     height: 250px;
@@ -48,46 +70,20 @@
       transition: 0.8s ease;
     }
 
+    /* Contact page */
+
     #contact-heading {
         text-align: center;
         padding-bottom: 20px;
     }
+
+    /* Profile page */
 
     #profile-head {
         text-align: center;
         padding-bottom: 20px;
     }
 
-    #post-heading {
-        text-align: center;
-        padding-bottom: 20px;
-    }
-
-    #block-container {
-      margin-top: 50px;
-    }
-
-    #search {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        width: 60%;
-        margin: 0 auto 50px;
-    }
-
-    p {
-      margin-bottom: 0px;
-    }
-
-    * {
-        padding: 0;
-        margin: 0;
-        font-family: 'Poppins', sans-serif
-    }
-    
     .profile-container {
         margin-top: 50px;
         display: -webkit-box;
@@ -100,7 +96,7 @@
             -ms-flex-align: center;
                 align-items: center;
     }
-    
+
     .profile-card {
         width: 400px;
         background-color: #fff;
@@ -121,7 +117,8 @@
         border-bottom: 1px solid #e1dede;
         background-color: #e5e5e5
     }
-    
+
+
     .profile-card .forms {
         padding: 25px
     }
@@ -149,30 +146,44 @@
                 box-shadow: none;
         outline: none
     }
-    
+
     .profile-card .inputs input[type="text"][readonly] {
         border: 2px solid rgba(0, 0, 0, 0)
     }
 
-* {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-}
+    /* Post Show page */
 
-body {
-    background-color: #FBFAF0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    color: #444;
-    height: 100vh;
-}
+    #post-heading {
+        text-align: center;
+        padding-bottom: 20px;
+    }
 
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    width: 80%;
-}
+    /* Show Cards page */
+
+    #block-container {
+      margin-top: 50px;
+    }
+
+    #search {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        width: 60%;
+        margin: 0 auto 50px;
+    }
+
+    p {
+      margin-bottom: 0px;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: 'Poppins', sans-serif
+    } 
 
 .show-container {
 margin: 26px;
@@ -414,14 +425,6 @@ margin: 26px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-
-  .search_field {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 0 auto;
-    width: 70%;
   }
 
   #sort-buttons {

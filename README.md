@@ -534,8 +534,6 @@ for your own idea. - Definition from [Github Docs](https://docs.github.com/en/fr
 
 1. Navigate to the GitHub Repository you want to fork.
 1. On the top right of the page under the header, click the fork button.
-    
-    ![Fork](readme_images/fork.JPG)
 1. This will create a duplicate of the full project in your GitHub Repository.
 
 ****

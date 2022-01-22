@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="post-heading" class="col-lg-8 col-md-10 mx-auto">
-
   <div>
     <!-- flash messages -->
     {% with messages = get_flashed_messages() %}
@@ -14,14 +13,13 @@
         {% endif %}
     {% endwith %}
   </div>
-
+  <!-- Post form -->
   <h1>Post New Show</h1>
 </div>
 <div id="shows-container">
   <form method="POST" action="{{ url_for('post_show')}}">
     <!-- column grid layout with dropdowns and text inputs -->
     <div class="row mb-4" id="post-block">
-
       <div class="col mb-4">
         <div class="form-outline">
           <label class="Visually-hidden"></label>
@@ -149,42 +147,34 @@
           </select>
         </div>
       </div>
-
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label">Title of Show</label>
         <input type="text" name="title" id="form6Example1" class="form-control" required/>
       </div>
-
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label">Director</label>
         <input type="text" name="director" id="form6Example2" class="form-control" required/>
       </div>
-
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label">Starring</label>
         <input type="text" name="starring" id="form6Example3" class="form-control" required/>
       </div>
-
       <!-- Text input -->
       <div class="form-outline mb-4">
         <label class="form-label">Picture Link &nbsp;<sub>(Paste picture link here)</sub></label>
         <input type="text" name="picture" id="form6Example5" class="form-control" required/>
       </div>
-
       <!-- Message input -->
       <div class="form-outline mb-4">
         <label class="form-label">Synopsis:</label>
         <textarea class="form-control" name="synopsis" id="form6Example7" rows="4"></textarea>
       </div>
-
     </div>
-
       <!-- Submit button -->
       <button type="submit" id="submit-btn" class="btn btn-lg btn-primary mb-4">Post show</button>
   </form>
 </div>
-
 {% endblock %}
