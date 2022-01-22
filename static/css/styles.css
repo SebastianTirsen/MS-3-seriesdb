@@ -571,6 +571,9 @@ margin: 26px;
     #post-block {
         display: block;
     }
+    #update-block {
+        display: block;
+    }
     .show-container {
         margin-right: 0;
         margin-left: 0;
@@ -598,7 +601,7 @@ margin: 26px;
     }
 }
 
-@media only screen and (max-width:401px) {
+@media only screen and (max-width:400px) {
     .cta-button {
         margin-top: 40vh;
     }

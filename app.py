@@ -146,7 +146,30 @@ def delete_show(show_id):
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
+    if request.method == "POST":
+        contact = {
+            "name": request.form.get("name"),
+            "email": request.form.get("email"),
+            "message": request.form.get("message"),
+        }
+        mongo.db.contacts.insert_one(contact)
+        flash("Thanks {}, we have received your message!".format(
+            request.form.get("name")))
     return render_template("contact.html")
+
+
+""" @app.route("/contact", methods=["GET", "POST"]) """
+""" def contact(): """
+"""     if request.method == "POST": """
+"""         contact = { """
+"""             "name": request.form.get("name"), """
+"""             "email": request.form.get("email"), """
+"""             "message": request.form.get("message"), """
+"""         } """
+"""         mongo.db.contacts.insert_one(contact) """
+"""         flash("Thanks {}, we have received your message!".format( """
+"""             request.form.get("name"))) """
+"""     return render_template("contact.html") """
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])

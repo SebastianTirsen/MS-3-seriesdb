@@ -74,9 +74,6 @@ tablet or desktop.
 * As a user, I want to be able to register to the website so that I can create and manage my watched shows.
 * As a user, I want a way to contact the site owner so that I can have any questions I may have in 
 regards to the website answered.
-<!-- * As a user, I want to be able to return to the main site without having to use the browser buttons so  -->
-<!-- that I can easily return to the website if I navigate to a page that doesn't exist. -->
-<!--  -->
 
 ### **The Scope Plane**
 
@@ -227,27 +224,11 @@ Form Fields:
 * Email - Type: Email, required.
 * Message - Type: TextArea, required.
 
-<!-- User Story: -->
-<!-- > As a user, I want to be able to return to the main site without having to use the browser buttons so  -->
-<!-- that I can easily return to the website if I navigate to a page that doesn't exist. -->
-<!--  -->
-<!-- Acceptance Criteria: -->
-<!-- * If a user redirects to the wrong page, an error will display that contains a link to go back to the main  -->
-<!-- website. -->
-
-<!-- Implementation: -->
-<!--  -->
-<!-- A custom 404 page will be created so that if a user attempts to navigate to a page that it not found, an  -->
-<!-- error will be displayed. This page will contain a clickable anchor link to allow the user to redirect to  -->
-<!-- the main website without needing to use the browser navigation buttons. -->
-
 ### **The Skeleton Plane**
 #### Wireframes
 
 Home:<br>
 ![Home](readme-images/wire-index.jpeg)<br>
-404:<br>
-![404](readme_images/wireframes/404.JPG)<br>
 Contact:<br>
 ![Contact](readme-images/wire-contact.jpeg)<br>
 Post Show:<br>
@@ -429,15 +410,236 @@ Testing is required on all features and user stories documented in this README.
 All clickable links are tested and redirects to the correct pages. All forms linked to MongoDB
 is tested to ensure they insert all given fields into the correct collections.
 
-HTML Code passed through the [W3C HTML Validator](https://validator.w3.org/#validate_by_input).
+### Responsiveness
 
-CSS Code passed through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+All pages were tested to ensure responsiveness on screen sizes from 390px and upwards on Chrome, Safari and Firefox browsers.
 
-JavaScript code passed through the [JSHint Validator](https://jshint.com/).
+Steps to test:
 
-Python Code passed through [PEP8 Validator](http://pep8online.com/) Mostly indentation errors, 
-I reduced to one fault I did not understand on line 40: "continuation line with same indent as next logical 
-line".
+1. Open browser and navigate to [ISDb](https://ms3-seriesdb-project.herokuapp.com/)
+2. Open the developer tools (right click and inspect)
+3. Set to responsive and decrease width to 390px
+4. Set the zoom to 50%
+5. Click and drag the responsive window to maximum width
+
+Expected:
+
+Website is responsive on all screen sizes and no images are pixelated or stretched.
+No horizontal scroll is present.
+No elements overlap.
+
+Actual:
+
+Website behaved as expected down to width 390px.
+
+Website was also opened on the following devices and no responsive issues were seen:
+
+- Ipad Air
+- Iphone 12 Pro
+- Ipad Mini
+- Samsung Galaxy S20 Ultra
+
+### Accessibility
+
+Manual tests were performed to ensure the website was accessible as possible and to identify accessibility issues.
+
+Testing was focused to ensure the following criteria were met:
+
+- All links easily accessible and working, and sending the user to the right page and in a logical order
+- Color contrasts sufficient.
+- Heading levels are not missed or skipped, if not motivated by context, to ensure the importance of content is relayed correctly to the end user
+- All content is contained within landmarks to ensure ease of use for assistive technology, allowing the user to navigate by page regions
+- HTML page lang attribute has been set
+- Aria properties have been implemented correctly
+- All the features working correctly.
+
+## Performance
+
+The site performance was tested using Lighthouse in the developer tool in Chrome.
+
+The performance for mobile use was scored as: 
+
+Performance 74 Accessibility 94 Best Practices 87 SEO 92
+
+The performance for desktop use was scored as:
+
+Performance 95 Accessibility 92 Best Practices 87 SEO 90
+
+Most important issues to improve Performance was to remove resources that blocks rendering.
+
+
+**Navigation Links**
+
+Testing was performed to ensure all navigation links on the respective pages, navigated to the correct pages as per design. This was done by clicking on the navigation links on each page.
+
+| Navigation Link | Page to Load    |
+| --------------- | --------------- |
+| Icon-link       | index.html      |
+| Home            | index.html      |
+| Login           | login.html      |
+| Register        | register.html   |
+| Contact         | contact.html    |
+| Your Profile    | profile.html    |
+| All Shows       | cards.html      |
+| New Show        | post_show.html  |
+| Log Out         | login.html      |
+
+Links on all pages navigated to the correct pages as exptected.
+
+**Form Testing**
+
+The form on the home page was tested to ensure it functioned as expected when correct data was input and when incorrect data was input. The following test scenarios were covered:
+
+_Scenario One - Correct Inputs_
+
+Steps to test:
+
+1. Navigate to [ISDb](https://ms3-seriesdb-project.herokuapp.com/login)
+2. Scroll down to the form and input the following data:
+   - Username: Daisy
+   - Password: Password
+3. Click Log In
+4. User should be redirected to the logged in users profile.html page.
+
+Expected:
+
+Form submits with no warnings or errors and user is redirected to the logged in users profile.html page.
+
+Actual:
+
+Website behaved as expected with no errors or warnings and redirected to profile.html.
+
+_Scenario Two - Correct Inputs_
+
+Steps to test:
+
+1. Navigate to [ISDb](https://ms3-seriesdb-project.herokuapp.com/profile/(your username))
+2. Scroll down to the form and select a posted show a show:
+   - Press Update button.
+   - update_show.html is displayed and prefilled.
+3. Change info in one or more input fields.
+4. Press update button.
+5. User redirects to update_show.html and flash message informs about Update Successful.
+6. Navigate back to profile page and check if the info is updated.
+
+Expected:
+
+Form submits with no warnings or errors and user is redirected to the update_show.html page and flash message informs user about success of update.
+
+Actual:
+
+Website behaved as expected with no errors or warnings and redirected to update_show.html.
+
+_Scenario Three - Correct Inputs_
+
+Steps to test:
+
+1. Navigate to [ISDb](https://ms3-seriesdb-project.herokuapp.com/profile/(your username))
+2. Scroll down to the form and select a posted show a show:
+   - Press Delete button.
+   - modal is displayed asking for confirmation of delete.
+3. Press Delete button.
+4. User redirects to profile.html and flash message informs about Delete Successful.
+5. Navigate back to profile page and check if the info is deleted.
+
+Expected:
+
+Show is deleted with no warnings or errors and user is redirected to the profile.html page and flash message informs user about success of 
+deletion.
+
+Actual:
+
+Website behaved as expected with no errors or warnings and redirected to profile.html.
+
+
+_Scenario Four - Correct Inputs_
+
+Steps to test:
+
+1. Navigate to [ISDb](http://ms3-seriesdb-project.herokuapp.com/cards)
+2. Scroll down to the form and select a posted show a show:
+   - Press Rate Show button.
+   - modal is displayed asking for user to Rate show by clicking desired amount of star and writing a short review.
+3. Press Save Rating button.
+4. User redirects to cards.html and flash message informs about Rating Successful.
+5. Press Review heading to display accordion info, check if the posted rating is displayed.
+
+Expected:
+
+Rating is posted with no warnings or errors and user is redirected to the cards.html page and flash message informs user about success of 
+rating.
+
+Actual:
+
+Website behaved as expected with no errors or warnings and redirected to cards.html.
+
+
+_Scenario Five - Correct Inputs_
+
+Steps to test:
+
+1. Navigate to [ISDb](http://ms3-seriesdb-project.herokuapp.com/post_show)
+2. Fill in the information about the show:
+   - Choose info in dropdowns.
+   - fill in info in textfields.
+   - paste in a correct link for the Picture Link.
+3. Press Post Show button.
+4. Navigate to profile page to find the posted show.
+
+Expected:
+
+Show is posted with no warnings or errors and user is redirected to the post_show.html page and flash message informs user about success of 
+Post.
+
+Actual:
+
+Website behaved as expected with no errors or warnings and redirected to post_show.html.
+
+
+_Scenario Six - Correct Inputs_
+
+Steps to test:
+
+1. Navigate to [ISDb](http://ms3-seriesdb-project.herokuapp.com/post_show)
+2. Fill in the information about the show:
+   - Choose info in dropdowns.
+   - fill in info in textfields.
+   - paste in a correct link for the Picture Link.
+3. Press Post Show button.
+4. Navigate to profile page to find the posted show.
+
+Expected:
+
+Show is posted with no warnings or errors and user is redirected to the post_show.html page and flash message informs user about success of 
+Post.
+
+Actual:
+
+Website behaved as expected with no errors or warnings and redirected to post_show.html.
+
+
+**Footer Social Media Icons / Links**
+
+Testing was performed on the Font Awesome Social Media icons in the footer to ensure that each one opened in a new tab and that each one had a hover affect of the orange branding color.
+
+Each item opened a new tab when clicked as expected and correct hover color was present.
+
+**Footer Contact Information**
+
+Testing was performed on the phone number in the contact information section of the footer to ensure behaviour was as expected.
+
+
+### Validator Testing 
+
+
+HTML Code passed through the with no errors [W3C HTML Validator](https://validator.w3.org/#validate_by_input).
+
+CSS Code passed through the with no errors [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+
+JavaScript code passed through the with no errors[JSHint Validator](https://jshint.com/).
+
+Python Code passed through with no errors[PEP8 Validator](http://pep8online.com/).
+
 
 #### **Access Requirements**
 For testing the site, just register a new user and then login.
@@ -455,7 +657,7 @@ Testing is dependent on the website being deployed live on Heroku.
 
 ### Test Results
 
-<!-- Full test results can be found [here](TESTING.md) -->
+Results to be found in: (/workspace/ms3-seriesdb/testing)
 
 ****
 ## Deployment
@@ -551,6 +753,10 @@ Theme Template:
 
 
 ### Code
+
+Code Istitute, The Flask Framework, Walk-through, Thorin and his Dwarves.
+
+Code Istitute, MongoDb Mini-project, Task-Manager.
 
 Boilerplate flask from:
 Github: (https://realpython/flask-boilerplate)
