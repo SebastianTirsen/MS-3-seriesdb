@@ -61,11 +61,11 @@
           <a data-bs-toggle="modal" data-bs-target="#delete-modal-{{card._id}}" class="btn btn-lg btn-primary updel-btn rate-button" href="#delete-modal-{{card._id}}">Delete</a>
       </div>
       <!-- Delete-modal -->
-      <div class="modal fade" id="delete-modal-{{card._id}}" tabindex="-1" aria-labelledby="modalDelete" aria-hidden="true">
+      <div class="modal fade" id="delete-modal-{{card._id}}" tabindex="-1" aria-label="modalDelete" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modalDelete">Warning</h5>
+              <h5 class="modal-title modalDelete">Warning</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -107,9 +107,8 @@
                       <div class="name-star">
                         <p class="user">{{ review.created_by }}</p>&nbsp;
                         <p class="movie-detail">
-                          <span class="icons icons-yellow"></span>
                           {% for n in range(review.rating | int) %}
-                          <i class="fas fa-star"></i>
+                          <span class="icons icons-yellow"><i class="fas fa-star"></i></span>
                           {% endfor %}
                         </p>
                       </div>

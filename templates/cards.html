@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="contact-heading" class="col-lg-8 col-md-10 mx-auto">
-
-
-  <section>
+  <div>
     <!-- flash messages -->
     {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -14,10 +12,8 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-</section>
-
-
-  <h1>All Shows</h1>
+</div>
+<h1>All Shows</h1>
 </div>
 <div id="block-container">
   
@@ -40,7 +36,7 @@
           <div class="movie--tag movie-tag-1">{{card.genre}}</div>
         </div>
         <div class="movie-details">
-          <p class="movie-detail"><span></span><i class="fas fa-globe"></i></span>&nbsp;{{card.country}}</p>
+          <p class="movie-detail"><span><i class="fas fa-globe"></i></span>&nbsp;{{card.country}}</p>
           <p class="movie-detail"><span><i class="fas fa-child"></i></span>&nbsp;{{card.parental_guidance}}</p>
           <p class="movie-detail"><span class="icons icons-grey"><i
                 class="fas fa-hourglass-half"></i></span>&nbsp;{{card.seasons}} seasons</p>
@@ -51,18 +47,18 @@
           Rate Show
         </button>
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal-{{card._id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="exampleModal-{{card._id}}" tabindex="-1"
           aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="ModalLabel">Rate This Show!</h5>
+                <h5 class="modal-title ModalLabel">Rate This Show!</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <form role="form" method="POST" action="{{ url_for('ratings')}}">
+                <form method="POST" action="{{ url_for('ratings')}}">
                   <div class="rating-box">
-                    <label for="" class="col-form-label">Your Rating:</label>
+                    <label class="col-form-label">Your Rating:</label>
                     <div class="rate">
                       <input type="radio" id="star5-{{card._id}}" name="rating" value="5" />
                       <label for="star5-{{card._id}}" title="text">5 stars</label>
@@ -75,11 +71,11 @@
                       <input type="radio" id="star1-{{card._id}}" name="rating" value="1" />
                       <label for="star1-{{card._id}}" title="text">1 star</label>
                     </div>
-                    <input type="hidden" id="show" name="show" value="{{ card.title }}">
+                    <input type="hidden" class="show" name="show" value="{{ card.title }}">
                   </div>
                   <div class="mb-3">
-                    <label for="message-text" class="col-form-label">Your Review:</label>
-                    <textarea class="form-control" name="review" id="message-text"></textarea>
+                    <label class="col-form-label">Your Review:</label>
+                    <textarea class="form-control message-text" name="review"></textarea>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -100,17 +96,16 @@
         <hr>
         <!-- Accordion -->
         <div class="card-buttons">
-          <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion accordion-flush accordionFlushExample">
             <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingOne">
+              <h2 class="accordion-header flush-headingOne">
                 <button class="accordion-button collapsed" type="button" id="accordion-button-text-{{card._id}}"
-                  data-bs-toggle="collapse" data-bs-target="#flush-collapseOne-{{card._id}}" aria-expanded="false"
-                  aria-controls="flush-collapseOne">
+                  data-bs-toggle="collapse" data-bs-target="#flush-collapseOne-{{card._id}}" aria-expanded="false">
                   Reviews
                 </button>
               </h2>
               <div id="flush-collapseOne-{{card._id}}" class="accordion-collapse collapse"
-                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                   <div class="reviews">
                     <h5>User Reviews</h5>
@@ -119,9 +114,9 @@
                     <div class="review">
                       <div class="name-star">
                         <p class="user">{{ review.created_by }}</p>&nbsp;
-                        <p class="movie-detail"><span class="icons icons-yellow">
+                        <p class="movie-detail">
                           {% for n in range(review.rating | int) %}
-                          <i class="fas fa-star"></i>
+                          <span class="icons icons-yellow"><i class="fas fa-star"></i></span>
                           {% endfor %}
                       </div>
                       <p>{{ review.review }}</p>
